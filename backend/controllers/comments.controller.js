@@ -7,15 +7,14 @@ function createComment(req, res) {
 
     const comment = {
         content: req.body.content,
-        postId: req.body.post_id,
-        userId: 1
+        PostId: +req.params.postId,
+        UserId: +req.params.userId
     }
 
     ///// Validation for Create /////
 
     const validationSchema = {
-        content: {type: "string", optional: false, max: "500"},
-        postId: {type: "number", optional: false}
+        content: {type: "string", optional: false, max: "500"}
     }
 
     const validatorInstance = new validatorClass();
@@ -28,38 +27,26 @@ function createComment(req, res) {
         });
     }
 
-    models.Post.findByPk(req.body.post_id).then(post => {
-        if(post === null){
-            res.status(404).json({
-                message: "Post not found"
-            });
-        }else{
-            models.Comment.create(comment).then(result => {
-                res.status(201).json({
-                    message: "Comment successfully created",
-                    comment: result
-                });
-            }).catch(error => {
-                res.status(500).json({
-                    message: "Something went wrong!",
-                    error: error
-                });
-            });
-        }}).catch(error => {
-            res.status(500).json({
-                message: "Something went wrong",
-                error: error
-            });
+    models.Comment.create(comment).then(result => {
+        res.status(201).json({
+            message: "Comment successfully created",
+            comment: result
         });
+    }).catch(error => {
+        res.status(500).json({
+            message: "Something went wrong!",
+            error: error
+        });
+    });
 }
 
 /////// READ ///////
 
 function showComment(req, res){
 
-    const id = req.params.id;
+    const Id = req.params.id;
 
-    models.Comment.findByPk(id).then(result => {
+    models.Comment.findByPk(Id).then(result => {
         if(result){
             res.status(200).json(result);
         }else{
@@ -90,18 +77,17 @@ function showAllComments(req, res){
 
 function updateComment(req, res){
 
-    const id = req.params.id;
+    const Id = req.params.id;
     const updatedComment = {
-        content: req.body.content
+        content: req.body.content,
+        UserId: req.userData.userId
     }
 
-    const userId = 1;
+    ///// Validation for Update /////
 
     const validationSchema = {
         content: {type: "string", optional: false, max: "500"},
     }
-
-    ///// Validation for Update /////
 
     const validatorInstance = new validatorClass();
     const validationResponse = validatorInstance.validate(updatedComment, validationSchema);
@@ -113,11 +99,26 @@ function updateComment(req, res){
         });
     }
 
-    models.Comment.update(updatedComment, {where: {id:id, userId:userId}}).then(result => {
-        res.status(200).json({
-            message: "Comment successfully updated",
-            post: updatedComment
-        });
+    models.Comment.findAll({where: {id: Id, userId: updatedComment.UserId}})
+    .then((resp)=>{
+        if(resp.length == 0){
+            res.status(404).json({
+                message: "Error! This comment cannot be updated"
+            });
+        }
+    })
+
+    models.Comment.update(updatedComment, {where: {id: Id, userId: updatedComment.UserId}}).then(result => {
+        if (result) {
+            res.status(200).json({
+                message: "Your comment was successfully updated",
+                post: updatedComment
+            });
+        } else {
+            res.status(404).json({
+                message: "Comment not found"
+            });
+        }
     }).catch(error => {
         res.status(200).json({
             message: "Something went wrong",
@@ -130,13 +131,21 @@ function updateComment(req, res){
 
 function deleteComment(req, res) {
 
-    const id = req.params.id;
-    const userId = 1;
+    const Id = req.params.id;
+    const UserId = req.userData.userId;
 
-    models.Comment.destroy({where:{id:id, userId:userId}}).then(result => {
-        res.status(200).json({
-            message: "Comment successfully deleted"
-        });
+    models.Comment.destroy({where:{id: Id, userId: UserId}}).then(result => {
+        if(result != 0){
+            res.status(200).json({
+                message: "You have successfully deleted your comment",
+                success: result 
+            });
+        } else {
+            res.status(401).json({
+                message: "You cannot delete this comment, it's not yours",
+                success: result 
+            });
+        }
     }).catch(error => {
         res.status(200).json({
             message: "Something went wrong!",

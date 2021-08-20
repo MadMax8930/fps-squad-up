@@ -60,9 +60,9 @@ function createPost(req, res) {
 
 function readPost(req, res){
 
-    const id = req.params.id;
+    const Id = req.params.id;
 
-    models.Post.findByPk(id).then(result => {
+    models.Post.findByPk(Id).then(result => {
         if (result) {
             res.status(200).json(result);
         } else {
@@ -88,18 +88,43 @@ function readAllPosts(req, res){
     });
 }
 
+function readAllMyPosts(req, res){
+
+    const UserId = req.userData.userId;
+
+    models.Post.findAll({where: {userId: UserId}}).then(result => {
+        res.status(200).json(result);
+    }).catch(error => {
+        res.status(500).json({
+            message: "Something went wrong!"
+        });
+    });
+}
+
+function readAllPostsByGameId(req, res){
+
+    const GameId = req.params.gameId;
+
+    models.Post.findAll({where: {gameId: GameId}}).then(result => {
+        res.status(200).json(result);
+    }).catch(error => {
+        res.status(500).json({
+            message: "Something went wrong!"
+        });
+    });
+}
+
 /////// UPDATE ///////
 
 function updatePost(req, res){
 
-    const id = req.params.id;
+    const Id = req.params.id;
     const updatedPost = {
         id: req.body.id,
         title: req.body.title,
         content: req.body.content,
         imageUrl: req.body.image_url,
-        userId: req.userData.userId
-        // gameId: req.body.game_id
+        UserId: req.userData.userId
     }
     ///// Validation for Update /////
 
@@ -107,7 +132,7 @@ function updatePost(req, res){
         title: {type: "string", optional: true, max: "100"},
         content: {type: "string", optional: true, max: "500"},
         imageUrl : {type: "string", optional: true},
-        gameId: {type: "number", optional: true}
+        GameId: {type: "number", optional: true}
     }
 
     const validatorInstance = new validatorClass();
@@ -120,19 +145,19 @@ function updatePost(req, res){
         });
     }
 
-    console.log(id)
-    console.log(updatedPost.userId)
+    console.log(Id);
+    console.log(updatedPost.UserId);
 
-    models.Post.findAll({where: {id:id, userId: updatedPost.userId}})
+    models.Post.findAll({where: {id: Id, userId: updatedPost.UserId}})
     .then((resp)=>{
         if(resp.length == 0){
             res.status(404).json({
-                message: "tentative de modification d'un Squad Post "
+                message: "Error! This squad post cannot be updated"
             });
         }
     })
 
-    models.Post.update(updatedPost, {where: {id:id, userId: updatedPost.userId}}).then(result => {
+    models.Post.update(updatedPost, {where: {id: Id, userId: updatedPost.UserId}}).then(result => {
         if (result) {
             res.status(200).json({
                 message: "Squad Post successfully updated",
@@ -155,20 +180,19 @@ function updatePost(req, res){
 
 function deletePost(req, res) {
 
-    const id = req.params.id;
-    const userId = req.userData.userId;
-    console.log(req)
+    const Id = req.params.id;
+    const UserId = req.userData.userId;
 
-    models.Post.destroy({where: {id:id, userId: userId}}).then(result => {   
+    models.Post.destroy({where: {id: Id, userId: UserId}}).then(result => {   
         if(result != 0){
             res.status(200).json({
                 message: "Squad Post successfully deleted",
-                nbPostDelete: result 
+                success: result 
             });
         } else {
             res.status(401).json({
                 message: "Unauthorized",
-                nbPostDelete: result 
+                success: result 
             });
         }
     }).catch(error => {
@@ -185,6 +209,8 @@ module.exports = {
     createPost : createPost,
     readPost : readPost,
     readAllPosts : readAllPosts,
+    readAllMyPosts : readAllMyPosts,
+    readAllPostsByGameId : readAllPostsByGameId,
     updatePost : updatePost,
     deletePost : deletePost
 }
