@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+.container {
+  width: 100%;
+  padding: 0px;
+  background-color: #f2ebf4;
+  max-width: 100%;
+}
+
+.btn {
+  font-family: "Press Start 2P", cursive;
+  font-size: x-small;
+}
+
+.about-text-click {
+  font-family: "Rubik Mono One", sans-serif;
+  font-size: x-small;
+  color: #24252a;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+}
+
+fa-icon {
+  font-size: large;
+}
+
+.fa-lg {
+  color: #24252a;
+}
+
+div span {
+  color: #24252a;
+  cursor: pointer;
+}
+
+div span:hover,
+fa-icon:hover {
+  color: rgba(6, 233, 138, 0.8);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 560px) {
+  .about-text-click {
+    font-family: "Press Start 2P", cursive;
+    font-size: 9px;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .about-text-click {
+    font-family: "Press Start 2P", cursive;
+    font-size: 6px;
+    font-weight: 400;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+  }
+  .btn {
+    font-size: xx-small;
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  .container {
+    min-height: 50px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    min-height: 15px;
+  }
+
+  .btn {
+    font-size: 9px;
+    font-weight: 500;
+  }
+
+  .fa-lg {
+    font-size: 11px;
+  }
+}
+
+@media screen and (min-width: 880px) and (max-width: 1180px) {
+  .container {
+    min-height: 20px;
+  }
+
+  .about-text {
+    position: relative;
+    top: 3px;
+  }
+}
+
+@media screen and (min-width: 1180px) and (max-width: 1300px) {
+  .container {
+    min-height: 30px;
+  }
+
+  .about-text {
+    position: relative;
+    top: 5px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .container {
+    min-height: 50px;
+    padding-bottom: 15px;
+  }
+
+  .about-text {
+    position: relative;
+    margin-top: 5px;
+    top: -5px
+  }
+}

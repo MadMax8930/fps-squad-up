@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+
+.carousel-inner{
+    position: relative;
+    height: 160px;
+  }
+  
+.item, img{
+    position: absolute;
+    height: 100% !important;
+    width:  100% !important;
+    min-height: 160px;
+  }
+
+.carousel-caption{
+    top: 46%;
+  }
+
+.h5 {
+    
+}  
+
+  @media screen and (min-width: 460px) {
+    .carousel-inner{
+        position: relative;
+        height: 220px;
+    
+      }
+      
+    .item, img{
+        position: absolute;
+        height: 100% !important;
+        width:  100% !important;
+        min-height: 220px;
+    
+      }
+
+    .carousel-caption{
+       top: 46%;
+      }
+}
+
+
+  @media screen and (min-width: 680px) {
+    .carousel-inner{
+        position: relative;
+        height: 300px;
+    
+      }
+      
+    .item, img{
+        position: absolute;
+        height: 100% !important;
+        width:  100% !important;
+        min-height: 300px;
+    
+      }
+
+      .carousel-caption{
+        top: 46%;
+      }  
+}
+
+
+  @media screen and (min-width: 990px) {
+    .carousel-inner{
+        position: relative;
+        height: 380px;
+    
+      }
+      
+    .item, img{
+        position: absolute;
+        height: 100% !important;
+        width:  100% !important;
+        min-height: 380px;
+    
+      }
+
+    .carousel-caption{
+        top: 46%;
+      }
+}
+
+  
+  @media only screen and (min-width : 1200px) {
+    .carousel-caption
+    {
+      left: 6%;
+    }
+  }
+
+  .carousel {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .main-carousel {
+    width: 100%;
+    background-color: #24252a;
+  }
