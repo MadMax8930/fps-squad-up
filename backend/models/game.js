@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // models.Game.hasMany(models.Post, { as: "post_game", onDelete:"CASCADE", hooks:true });
-      // models.Post.belongsTo(models.Game,{ foreignKey:"gameId" });
+      
+       models.Game.hasMany(models.Post, { as: "posts", onDelete:"CASCADE", hooks:true });
 
       // models.Game.hasMany(models.Comment, { as: "comment_user", onDelete:"CASCADE", hooks:true });
       // models.Post.belongsTo(models.User, { foreignKey:"userId" });

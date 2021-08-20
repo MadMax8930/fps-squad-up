@@ -11,15 +11,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
     
+      models.Post.hasMany(models.Comment, { as: "comments", onDelete:"CASCADE", hooks:true });
       
     }
   };
   Post.init({
     title: DataTypes.STRING,
     content: DataTypes.TEXT,
-    imageUrl: DataTypes.STRING,
-    gameId: DataTypes.INTEGER,
-    userId: DataTypes.INTEGER
+    imageUrl: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Post',

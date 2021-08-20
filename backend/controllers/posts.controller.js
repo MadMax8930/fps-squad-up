@@ -9,8 +9,8 @@ function createPost(req, res) {
         title: req.body.title,
         content: req.body.content,
         imageUrl: req.body.image_url,
-        gameId: req.body.game_id,
-        userId: req.userData.userId
+        GameId: +req.params.gameId,
+        UserId: +req.params.userId
     }
 
     ///// Validation for Create /////
@@ -19,7 +19,7 @@ function createPost(req, res) {
         title: {type: "string", optional: false, max: "100"},
         content: {type: "string", optional: false, max: "500"},
         imageUrl : {type: "string", optional: true},
-        gameId: {type: "number", optional: false}
+        GameId: {type: "number", optional: false}
     }
 
     const validatorInstance = new validatorClass();
@@ -32,8 +32,8 @@ function createPost(req, res) {
         });
     }
 
-    models.Game.findByPk(req.body.game_id).then(result => {
-        if(result) {
+   // models.Game.findByPk(req.body.game_id).then(result => {
+     //   if(result) {
 
             // If the Game exists, then we can create a post
 
@@ -48,12 +48,12 @@ function createPost(req, res) {
                     error: error
                 });
             });
-        } else {
-            res.status(400).json({
-                message: "Select a valid game to make a post"
-            });
-        }
-    });
+        //} else {
+         //   res.status(400).json({
+         //       message: "Select a valid game to make a post"
+         //   });
+      //  }
+   // });
 }
 
 /////// READ ///////
