@@ -7,6 +7,7 @@ const postsRoute = require ('./routes/posts');
 const usersRoute = require ('./routes/users');
 const imagesRoute = require ('./routes/images');
 const commentsRoute = require('./routes/comments');
+const gamesRoute = require('./routes/games');
 
 const app = express();
 app.use(cors({

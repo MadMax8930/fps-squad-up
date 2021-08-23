@@ -11,7 +11,7 @@ import { AccountComponent } from './account/account.component';
 const routes: Routes = [
   
     { path: '', component: GuestComponent },
-    { path: '', redirectTo: '/', pathMatch: 'full' },
+    // { path: '', redirectTo: '/', pathMatch: 'full' },
     { path: 'login', component: LoginComponent},
     { path: 'register', component: RegisterComponent},
     { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},

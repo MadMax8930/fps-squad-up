@@ -1,1 +1,37 @@
-<p>account works!</p>
+<app-navbar-user-search></app-navbar-user-search>
+
+<app-post></app-post>
+
+
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Posts</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr >
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Post</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let post of posts" class="text-center">
+                        <td>{{post.id}}</td>
+                        <td>{{post.title}}</td>
+                        <td>{{post.comment}}</td>
+                        <td>
+                            <button class="btn btn-primary" [routerLink]="['/update', post]">Update</button>
+                            <button class="btn btn-danger" (click)="deleteOnClick(post.id, post.UserId)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>

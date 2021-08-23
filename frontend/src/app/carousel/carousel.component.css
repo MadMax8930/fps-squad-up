@@ -5,14 +5,12 @@
 
 .carousel-inner{
     position: relative;
-    height: 160px;
   }
   
 .item, img{
     position: absolute;
     height: 100% !important;
     width:  100% !important;
-    min-height: 160px;
   }
 
 .carousel-caption{
@@ -26,15 +24,12 @@
   @media screen and (min-width: 460px) {
     .carousel-inner{
         position: relative;
-        height: 220px;
-    
       }
-      
+  
     .item, img{
         position: absolute;
         height: 100% !important;
         width:  100% !important;
-        min-height: 220px;
     
       }
 
@@ -47,7 +42,6 @@
   @media screen and (min-width: 680px) {
     .carousel-inner{
         position: relative;
-        height: 300px;
     
       }
       
@@ -55,7 +49,6 @@
         position: absolute;
         height: 100% !important;
         width:  100% !important;
-        min-height: 300px;
     
       }
 
@@ -68,7 +61,6 @@
   @media screen and (min-width: 990px) {
     .carousel-inner{
         position: relative;
-        height: 380px;
     
       }
       
@@ -76,7 +68,6 @@
         position: absolute;
         height: 100% !important;
         width:  100% !important;
-        min-height: 380px;
     
       }
 
@@ -94,11 +85,12 @@
   }
 
   .carousel {
-    width: 70%;
+    width: 100%;
     margin: 0 auto;
   }
 
   .main-carousel {
     width: 100%;
-    background-color: #24252a;
+    background: #202122;
+
   }

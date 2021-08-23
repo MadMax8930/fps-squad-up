@@ -4,13 +4,13 @@ const validatorClass = require('fastest-validator');
 /////// CREATE///////
 
 function createPost(req, res) {
-
+ console.log(req.body)
     const post = {
         title: req.body.title,
         content: req.body.content,
         imageUrl: req.body.image_url,
-        GameId: +req.params.gameId,
-        UserId: +req.params.userId
+        GameId: +req.body.gameId,
+        UserId: req.params.userId
     }
 
     ///// Validation for Create /////
@@ -203,6 +203,19 @@ function deletePost(req, res) {
     });
 }
 
+////////RANDOM//////////
+
+function randomNumber(length) {
+    let randomNumber = Math.floor(Math.random() * length);
+    return randomNumber;
+  }
+
+function findRandom(req, res) {
+    models.Post.findAll().then(result => {
+        res.status(200).json(result[randomNumber(result.length)]);
+  })
+}
+
 /////// EXPORTS ///////
 
 module.exports = {
@@ -212,5 +225,6 @@ module.exports = {
     readAllMyPosts : readAllMyPosts,
     readAllPostsByGameId : readAllPostsByGameId,
     updatePost : updatePost,
-    deletePost : deletePost
+    deletePost : deletePost,
+    findRandom : findRandom
 }

@@ -1,51 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Login Page</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css">
-</head>
 <body>
+    <div class="wrapper" id="img">
+       <div class="register-form text-center" id="register-position">
+         <span>
+             <div class="logo-website">
+               <a href="#" class="logo">
+                 <img src="assets/logoBrand.png" alt="Website Logo" width="80%">
+               </a>
+             </div>
+           </span>
+         <form (ngSubmit) ="submitForm()"  [formGroup]="registerForm">
+             <h1>Create account</h1>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 offset-md-4">
-                <div class="register-form bg-light mt-4 p-4">
-                  <form (ngSubmit) ="submitForm()"  [formGroup]="registerForm" class="row g-3">
-                        <h4>SignUp</h4>
-                        <i>Create an account</i>
-
-                        <div class="col-12">
-                           <label for="name-input">Name</label>
-                           <input type="text" name="name" class="form-control" formControlName="name" id="name-input" placeholder="Name">
-                       </div>
-
-                        <div class="col-12">
-                            <label for="email-input">Email</label>
-                            <input type="email" name="email" class="form-control" formControlName="email" id="email-input" placeholder="Email">
-                        </div>
-
-                        <div class="col-12">
-                            <label for="pwd-input">Password</label>
-                            <input type="password" name="password" class="form-control" formControlName="password" id="pwd-input" placeholder="Password">
-                        </div>
-                    
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-dark float-end" [disabled]="registerForm.invalid">SignUp</button>
-                        </div>
-
-                        <div class="text-center">
-                          <p>Already a member? Please login <a href='/login'>Login</a></p>
-                        </div>
-                    </form>
-                </div>
+             <div class="form-floating">
+                <input type="text"
+                       class="form-control"
+                       id="name-input" 
+                       placeholder="Name"
+                       formControlName= "name">
+                <label for="name-input">Name</label>
             </div>
-        </div>
+ 
+             <div class="form-floating">
+                 <input type="email"
+                        class="form-control" 
+                        id="email-input" 
+                        placeholder="Email"
+                        formControlName="email">
+                 <label for="email-input">Email</label>
+             </div>
+ 
+             <div class="form-floating">
+                 <input type="password" 
+                        class="form-control"
+                        id="pwd-input"
+                        placeholder="Password"
+                        formControlName="password">
+                 <label for="pwd-input">Password</label>
+             </div>
+
+             <div class="text-login">
+                <p>Already a member? Please <a href='/login'>Login</a></p>
+              </div>
+ 
+             <button class="btn btn-lg btn-primary"
+                     type="submit"
+                     [disabled]="registerForm.invalid">SIGN-UP</button>
+         </form>
+       </div>
     </div>
-    
-    <!-- Bootstrap JS -->
-    <script src="https://www.markuptag.com/bootstrap/5/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+ </body>
+ 

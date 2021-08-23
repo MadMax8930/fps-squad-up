@@ -1,0 +1,49 @@
+.container {
+    position: relative;
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    padding: 0;
+    min-height: 81vh;
+    background: #202122;
+    color: white;
+  }
+  .container img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .container .btn {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .container .btn:hover {
+    background-color: black;
+  }
+  
+  .card-text {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  #bg {
+    width: 100%;
+    margin: 0 auto;
+  }

@@ -16,13 +16,7 @@
                                 <h2 class="text-center">Create your squad Post</h2>
                                 <p>It's the moment to tell the world what is on your mind.</p>
 
-                                <label for="game">Choose a car:</label>
-                                  <select id="game" name="gamelist" form="postform">
-                                  <option value="game1">warzone</option>
-                                  <option value="game2">Battlefield</option>
-                                  <option value="game3">Call of duty</option>
-                                  <option value="game4">Halo</option>
-                                </select>
+                                
 
                                 <div *ngIf="alert" class="alert alert-success success-dismissible fade show" role="alert">
                                   <strong>Succes!</strong> Quote has been created!
@@ -32,7 +26,10 @@
                                 </div>
 
                                 <form (ngSubmit)="submitPost()" [formGroup]="postForm" class="form" method="post">
-                                
+                                    <label for="game">Choose your game:</label>
+                                    <select id="game" formControlName="gameId">
+                                    <option value="{{game.id}}" *ngFor="let game of games">{{game.gameName}}</option>
+                                  </select>
                                     <div class="form-group">
                                         <div class="input-group">
                                             <input id="post" formControlName="content" placeholder="post" class="form-control inputfield" type="text" name="content" aria-label="post" aria-describedby="post-addon">

@@ -18,10 +18,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true
       },
-      gameId: {
+      GameId: {
         type: Sequelize.INTEGER
       },
-      userId: {
+      UserId: {
         type: Sequelize.INTEGER
       },
       createdAt: {

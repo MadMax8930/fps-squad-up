@@ -10,13 +10,12 @@ function checkAuth(req, res, next) {
 
         if( req.userData.userId && req.userData.userId != decodedToken.userId ) {
             return res.status(401).json({
-                message: "Invalid or expired token provided!",
-                error: error
+                message: "Invalid or expired token provided!"
+            
             });
         } else if( req.params.userId && req.params.userId != decodedToken.userId ) {
             return res.status(401).json({
-                message: "Invalid or expired token provided!",
-                error: error
+                message: "Invalid or expired token provided!"
             });
         } else {
             next();

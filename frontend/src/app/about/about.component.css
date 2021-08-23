@@ -1,10 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
+
+.about {
+  background: #202122;
+}
+
 .container {
   width: 100%;
   padding: 0px;
-  background-color: #f2ebf4;
+  background: #780206;
+  background: -webkit-linear-gradient(to right, #061161, #780206);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   max-width: 100%;
 }
 
@@ -16,7 +23,7 @@
 .about-text-click {
   font-family: "Rubik Mono One", sans-serif;
   font-size: x-small;
-  color: #24252a;
+  color: #b9bbc5;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -28,17 +35,11 @@ fa-icon {
 }
 
 .fa-lg {
-  color: #24252a;
+  color: #f5f6fc;
 }
 
 div span {
-  color: #24252a;
-  cursor: pointer;
-}
-
-div span:hover,
-fa-icon:hover {
-  color: rgba(6, 233, 138, 0.8);
+  color: #f5f6fc;
   cursor: pointer;
 }
 
@@ -116,13 +117,12 @@ fa-icon:hover {
 
 @media screen and (min-width: 1300px) {
   .container {
-    min-height: 50px;
-    padding-bottom: 15px;
+    min-height: 30px;
+    padding-bottom: 5px;
   }
 
   .about-text {
     position: relative;
-    margin-top: 5px;
-    top: -5px
+    top: 5px;
   }
 }

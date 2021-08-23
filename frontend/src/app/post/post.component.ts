@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PostService } from '../services/post.service';
 import { FormBuilder, FormGroup, FormControl, Validators, FormControlName } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
+import { CategoryService } from '../services/category.service';
 
 @Component({
   selector: 'app-post',
@@ -10,7 +12,9 @@ import { Router } from '@angular/router';
 })
 export class PostComponent implements OnInit {
 
+  userId: number;
   alert: boolean = false;
+  games: [];
 
   postForm = new FormGroup({
 
@@ -22,30 +26,35 @@ export class PostComponent implements OnInit {
   
     });
 
-    constructor(private formBuilder: FormBuilder, private postService: PostService, private router: Router) { }
+    constructor(private formBuilder: FormBuilder, private postService: PostService, private router: Router, private gameService: CategoryService,
+      private authService: AuthService) { }
 
 
     ngOnInit(): void {
       this.initForm;
+      this.gameService.getGames().subscribe((resp) => {
+        this.games = resp;
+        console.log(this.games);
+      })
+      this.userId = this.authService.getIdByToken();
+
     }
   
     initForm() {
       this.postForm = this.formBuilder.group({
       title: this.formBuilder.control(""),
       content: this.formBuilder.control(""),
-      image_url: this.formBuilder.control(""),
-      game_id: this.formBuilder.control("")
+      gameId: this.formBuilder.control("")
       })
       
     }
   
     submitPost() {
       const formValues = this.postForm.value;
-      formValues.game_id = 11
       console.log(formValues)
-      this.postService.createPost(formValues)
+      this.postService.createPost(this.userId, formValues)
       .subscribe((response) => {
-        console.log('Quote created successfully!');
+        console.log('Post created successfully!');
         console.log(response);
         this.alert = true
         this.postForm.reset({});

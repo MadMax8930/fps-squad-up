@@ -1,1 +1,20 @@
-<p>visitor works!</p>
+<div class="container">
+    <div id="bg">
+        <img src="assets/visitor.png" width="100%" alt="Random generator">
+      </div>
+    <button class="btn" (click)="randomPost()">Random Post</button>
+  <div class="card-text">
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <!-- <h5 class="card-title mb-2 text-muted">{{post.GameId}}</h5> -->
+      <h5 class="card-title mb-2 text-muted">{{post.title}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{post.content}}</h6>
+      <h5 class="card-title mb-2 text-muted">{{post.imageUrl}}</h5>
+      <h6 class="card-creator mb-2 text-muted">{{post.UserId}}</h6>
+    </div>
+  </div>
+
+  </div>
+</div>
+

@@ -11,10 +11,10 @@ module.exports = {
       content: {
         type: Sequelize.TEXT
       },
-      postId: {
+      PostId: {
         type: Sequelize.INTEGER
       },
-      userId: {
+      UserId: {
         type: Sequelize.INTEGER
       },
       createdAt: {

@@ -21,6 +21,11 @@ import { VisitorComponent } from './visitor/visitor.component';
 import { FooterComponent } from './footer/footer.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { PostComponent } from './post/post.component';
+import { NavbarUserSearchComponent } from './navbar-user-search/navbar-user-search.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { UpdatePostComponent } from './update-post/update-post.component'; 
 
 @NgModule({
   declarations: [
@@ -36,7 +41,9 @@ import { PostComponent } from './post/post.component';
     VisitorComponent,
     FooterComponent,
     CarouselComponent,
-    PostComponent
+    PostComponent,
+    NavbarUserSearchComponent,
+    UpdatePostComponent
   ],
   imports: [
     CommonModule,
@@ -45,7 +52,10 @@ import { PostComponent } from './post/post.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]

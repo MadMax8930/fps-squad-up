@@ -1,6 +1,6 @@
 export interface Comment {
     id? : number,
     content : string,
-    postId : number,
-    userId : number 
+    PostId : number,
+    UserId : number 
 }

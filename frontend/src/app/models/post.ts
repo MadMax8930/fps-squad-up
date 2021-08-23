@@ -2,7 +2,7 @@ export interface Post {
     id? : number,
     title : string,
     content : string,
-    imageUrl : String,
+    imageUrl? : String,
     gameId: string,
-    userId : number 
+    UserId : number 
 }
