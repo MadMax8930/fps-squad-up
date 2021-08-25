@@ -22,7 +22,6 @@ export class AccountComponent implements OnInit {
   }
 
   showMyPosts() {
-
     return this.postService.readAllMyPosts(this.userId).subscribe(posts => {
       this.posts = posts;
       console.log(posts);
@@ -31,14 +30,9 @@ export class AccountComponent implements OnInit {
 
   deleteOnClick(id, UserId){
     this.postService.deletePost(id, UserId).subscribe(posts => {
-      console.log(id);
-      console.log(UserId);
-
-    message: "Post deleted";
-
+      console.log('Post updated successfully!');
+      console.log(posts);
+      this.showMyPosts();
     });
   }
-  
-
-
 }

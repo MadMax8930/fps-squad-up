@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 /*-------------mobile----------------*/
 
 * {
@@ -23,12 +26,6 @@
     width: 18%;
     height: 18%;
     content: url('/assets/logo-web-white.png');
-  }
-
-  .container-logo:hover {
-    width: 18%;
-    height: 18%;
-    content: url('/assets/logo-yellow.png');
   }
 
   img {
@@ -93,12 +90,6 @@
     content: url('/assets/logo-web-white.png');
   }
 
-  .container-logo:hover {
-    width: 18%;
-    height: 18%;
-    content: url('/assets/logo-yellow.png');
-  }
-
 }
 
 
@@ -123,12 +114,6 @@
     width: 16%;
     height: 16%;
     content: url('/assets/logo-web-white.png');
-  }
-
-  .container-logo:hover {
-    width: 16%;
-    height: 16%;
-    content: url('/assets/logo-yellow.png');
   }
 
 }
@@ -156,13 +141,6 @@
     height: 16%;
     content: url('/assets/logo-web-white.png');
   }
-
-  .container-logo:hover {
-    width: 16%;
-    height: 16%;
-    content: url('/assets/logo-yellow.png');
-  }
-
 }
 
 
@@ -188,13 +166,6 @@
     height: 16%;
     content: url('/assets/logo-web-white.png');
   }
-
-  .container-logo:hover {
-    width: 16%;
-    height: 16%;
-    content: url('/assets/logo-yellow.png');
-  }
-
 }
 
 

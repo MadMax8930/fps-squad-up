@@ -6,16 +6,22 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { GuestComponent } from './guest/guest.component';
 import { AccountComponent } from './account/account.component';
+import { UpdatePostComponent } from './update-post/update-post.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { PostComponent } from './post/post.component';
 
 
 const routes: Routes = [
   
+    { path: '', redirectTo: '/', pathMatch: 'full' },
     { path: '', component: GuestComponent },
-    // { path: '', redirectTo: '/', pathMatch: 'full' },
     { path: 'login', component: LoginComponent},
     { path: 'register', component: RegisterComponent},
+    { path: 'account', component: AccountComponent, canActivate: [AuthGuard]},
+    { path: 'post', component: PostComponent, canActivate: [AuthGuard]},
+    { path: 'update/:id', component: UpdatePostComponent, canActivate: [AuthGuard]},
     { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
-    { path: 'account', component: AccountComponent, canActivate: [AuthGuard]}
+    { path: 'feedback', component: FeedbackComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

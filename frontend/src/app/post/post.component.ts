@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../services/post.service';
 import { FormBuilder, FormGroup, FormControl, Validators, FormControlName } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { CategoryService } from '../services/category.service';
 
@@ -48,6 +48,7 @@ export class PostComponent implements OnInit {
       })
       
     }
+    
   
     submitPost() {
       const formValues = this.postForm.value;

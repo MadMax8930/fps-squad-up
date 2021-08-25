@@ -6,56 +6,67 @@
 
 
 <body>
-<div class="container add-quote">
+<div class="wrapper" id="img">
+<div class="container add-post">
             <div class="row">
                 <div class="col-md-12 col-md-offset-4">
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="text-center">
-                                <img src="/assets/logo-web-white.png" alt="logo" border="0">
-                                <h2 class="text-center">Create your squad Post</h2>
-                                <p>It's the moment to tell the world what is on your mind.</p>
+                                <img src="/assets/logoBrand.png" alt="logo" border="0">
+                                <h2 class="text-center squad-post">Add New Squad Post</h2>
+                                <div class="add-text-1">
+                                <p><i>What kind of player are you looking for?</i></p>
+                            </div>
 
                                 
 
                                 <div *ngIf="alert" class="alert alert-success success-dismissible fade show" role="alert">
-                                  <strong>Succes!</strong> Quote has been created!
+                                  <strong>Success!</strong> Post has been created!
                                   <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                   </button>
                                 </div>
 
                                 <form (ngSubmit)="submitPost()" [formGroup]="postForm" class="form" method="post">
-                                    <label for="game">Choose your game:</label>
-                                    <select id="game" formControlName="gameId">
+
+                                <select id="game" class="my-3" formControlName="gameId">
+                                    <option value=""> Select your game</option>
                                     <option value="{{game.id}}" *ngFor="let game of games">{{game.gameName}}</option>
-                                  </select>
-                                    <div class="form-group">
+                                </select>
+                                 
+                                    <div class="form-group d-flex justify-content-center">
                                         <div class="input-group">
-                                            <input id="post" formControlName="content" placeholder="post" class="form-control inputfield" type="text" name="content" aria-label="post" aria-describedby="post-addon">
+                                            <input id="post" formControlName="content" placeholder="Your Title" class="form-control" type="text" name="content" aria-label="post" aria-describedby="post-addon">
                                             <span class="input-group-text" id="post-addon"></span>
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                
+                                    <div class="form-group d-flex justify-content-center">
                                         <div class="input-group">
-                                            <input id="title" formControlName="title"  placeholder="by" class="form-control" type="text" name="title" aria-label="by" aria-describedby="by-addon">
+                                            <textarea id="title" formControlName="title"  placeholder="Your Post" class="form-control" type="text" name="title" aria-label="by" aria-describedby="by-addon"></textarea>
                                             <span class="input-group-text" id="by-addon"></span>               
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <input name="btnAdd" type="submit" [disabled]="postForm.invalid" class="btn btn-lg btn-primary btn-block btnAdd" value="Add post">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <button class="btn btn-lg btn-secondary btn-block" routerLink="/account/">Your account</button>
-                                    </div>
-                                    <p>All created posts are visible from your <a href="/account">account</a></p>
+                                    <!-- <div class="form-group d-flex justify-content-center">
+                                        <label for="postImage"></label>
+                                        <input type="file" class="form-control-file" id="postImage">
+                                    </div> -->
+<div class="add-text-2">
+                                    <p><small>All your posts are visible from your <a href="/account">account</a></small></p>
+                                </div>
+            
+                                        <button type="submit" [disabled]="postForm.invalid" class="btn btn-danger">Create Post</button>
                                 </form>
                             </div>
+                    
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-      </body>
+</div>
+</div>
+</body>
+
+

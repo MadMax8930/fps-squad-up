@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+h3 {
+    font-family: "Press Start 2P";
+    font-size: medium;
+}
+table {
+    border: 1px solid;
+    margin: 3rem 0;
+    padding: 0;
+    table-layout: fixed;
+    width: 100%;
+  
+  }
+  
+  table tr {
+    background-color: rgb(211, 205, 205);
+    border: 1px solid black;
+    padding: .35em;
+  }
+  
+  table th,
+  table td {
+    padding: .625em;
+    text-align: center; 
+  }
+
+  @media screen and (max-width: 900px) {
+
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+      }
+    
+    table tr {
+      border-bottom: 2px solid grey;
+      display: block;
+    }
+    
+    table td {
+      border-bottom: 2px inset grey;
+      display: block;
+      text-align: right;
+    }
+    
+    table td::before {
+      content: attr(data-label);
+      float: left;
+    }
+  }
+
+  @media screen and (max-width: 460px) {
+
+    h3 {
+        font-family: "Press Start 2P";
+        font-size: x-small;
+    }
+
+  }
+

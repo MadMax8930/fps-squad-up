@@ -1,20 +1,38 @@
 <div class="container">
     <div id="bg">
-        <img src="assets/visitor.png" width="100%" alt="Random generator">
+        <img src="assets/visitor.png" alt="Random generator">
       </div>
     <button class="btn" (click)="randomPost()">Random Post</button>
-  <div class="card-text">
 
-  <div class="card" style="width: 18rem;">
+  <div class="card card-custom" style="width: 18rem;" *ngIf="showCard">
     <div class="card-body">
-      <!-- <h5 class="card-title mb-2 text-muted">{{post.GameId}}</h5> -->
       <h5 class="card-title mb-2 text-muted">{{post.title}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">{{post.content}}</h6>
-      <h5 class="card-title mb-2 text-muted">{{post.imageUrl}}</h5>
-      <h6 class="card-creator mb-2 text-muted">{{post.UserId}}</h6>
+      <p class="card-text mb-2 text-muted">{{post.content}}</p>
+      <p class="card-text mb-2 text-muted">{{post.gameId}}</p>
+      <!-- <h5 class="card-title mb-2 text-muted">{{post.imageUrl}}</h5> -->
     </div>
-  </div>
-
   </div>
 </div>
 
+
+
+
+<!-- <div class="container">
+  <div id="bg">
+      <img src="assets/visitor.png" width="100%" alt="Random generator">
+    </div>
+  <button class="btn" (click)="randomPost()">Random Post</button>
+
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{post.title}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    {{post.content}}
+  </div>
+</ng-template>
+
+</div> -->

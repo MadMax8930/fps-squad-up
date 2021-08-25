@@ -9,12 +9,15 @@
   
 .item, img{
     position: absolute;
-    height: 100% !important;
-    width:  100% !important;
+    height: 100%;
   }
 
 .carousel-caption{
     top: 46%;
+  }
+
+  .d-flex{
+    min-height: 66vh;
   }
 
 .h5 {
@@ -28,8 +31,6 @@
   
     .item, img{
         position: absolute;
-        height: 100% !important;
-        width:  100% !important;
     
       }
 
@@ -47,8 +48,6 @@
       
     .item, img{
         position: absolute;
-        height: 100% !important;
-        width:  100% !important;
     
       }
 
@@ -66,9 +65,7 @@
       
     .item, img{
         position: absolute;
-        height: 100% !important;
-        width:  100% !important;
-    
+  
       }
 
     .carousel-caption{

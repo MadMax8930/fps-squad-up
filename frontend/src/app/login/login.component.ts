@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     .subscribe((response: any) => {
         console.log('User successfully logged in!', response);
         console.log(response);
-        this.router.navigate(['/home']);
+        this.router.navigate(['/account']);
       });
   }
 

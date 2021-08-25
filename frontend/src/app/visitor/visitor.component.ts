@@ -9,6 +9,8 @@ import { PostService } from '../services/post.service';
 })
 export class VisitorComponent implements OnInit {
 
+  showCard: boolean = false;
+
   constructor(private postService: PostService, private router: Router) { }
 
   post :{
@@ -17,12 +19,13 @@ export class VisitorComponent implements OnInit {
     imageUrl : string,
     gameId: string,
     UserId : number 
-}
+  }
 
   ngOnInit(): void {
   }
 
   randomPost(){
+    this.showCard = true;
     this.postService.findRandom(this.post)
     .subscribe((post) => {
       console.log(post);

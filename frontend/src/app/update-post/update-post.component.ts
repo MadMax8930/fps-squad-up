@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../services/post.service';
 import { FormBuilder, FormGroup, FormControl, Validators, FormControlName } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-update-post',
@@ -10,28 +11,33 @@ import { Router } from '@angular/router';
 })
 export class UpdatePostComponent implements OnInit {
 
-  // updateForm = new FormGroup({
+  UserId : any;
 
-  //   title: new FormControl(''),
-  //   content: new FormControl(''),
-  //   imageUrl: new FormControl('')
+  updateForm = new FormGroup({
+
+    title: new FormControl(''),
+    content: new FormControl('')
     
-  //   });
+    });
 
-  constructor(private formBuilder: FormBuilder, private postService: PostService, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private postService: PostService, private router: Router,
+    private authService: AuthService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+
+    this.UserId = this.authService.getIdByToken();
   }
 
-  // submitUpdate() {
-  //   const formValues = this.updateForm.value;
-  //   console.log(formValues)
-  //   this.postService.updatePost(formValues)
-  //   .subscribe((response) => {
-  //     console.log('Post updated successfully!');
-  //     console.log(response);
-  //     })
-  // }
-
+  submitUpdate() {
+    const post = this.activatedRoute.snapshot.params["id"]
+    const formValues = this.updateForm.value;
+    console.log(formValues)
+    this.postService.updatePost(post, this.UserId, formValues)
+    .subscribe((response) => {
+      console.log('Post updated successfully!');
+      console.log(response);
+      this.router.navigate(['/account']);
+      })
+  }
 
 }

@@ -157,7 +157,9 @@ function updatePost(req, res){
         }
     })
 
-    models.Post.update(updatedPost, {where: {id: Id, userId: updatedPost.UserId}}).then(result => {
+    models.Post.update(updatedPost, {where: 
+        {id: Id, userId: updatedPost.UserId}
+    }).then(result => {
         if (result) {
             res.status(200).json({
                 message: "Squad Post successfully updated",

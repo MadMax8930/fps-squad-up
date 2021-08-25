@@ -25,7 +25,8 @@ import { NavbarUserSearchComponent } from './navbar-user-search/navbar-user-sear
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { UpdatePostComponent } from './update-post/update-post.component'; 
+import { UpdatePostComponent } from './update-post/update-post.component';
+import { FeedbackComponent } from './feedback/feedback.component'; 
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { UpdatePostComponent } from './update-post/update-post.component';
     CarouselComponent,
     PostComponent,
     NavbarUserSearchComponent,
-    UpdatePostComponent
+    UpdatePostComponent,
+    FeedbackComponent
   ],
   imports: [
     CommonModule,

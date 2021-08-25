@@ -48,10 +48,11 @@ function register(req, res) {
 ////////////// User Login ///////////////
 
 function login(req, res) {
-  
+    
     ///// Login to an existing email /////
 
     models.User.findOne({ where: { email: req.body.email } }).then(user => {
+        console.log(user)
         if (user === null) {
             res.status(401).json({
                 message: "Invalid credentials!"
@@ -60,16 +61,16 @@ function login(req, res) {
             bcryptjs.compare(req.body.password, user.password, function (err, result) {
 
                 ///// User Token generation if password match /////
-
-                if (result) {
-                    const token = jwt.sign({
-                        userId: user.id
-                    }, process.env.JWT_KEY, function (err, token) {
+                
+                if (result) {                  // Token creation
+                    const token = jwt.sign({   // Sign function jwt package
+                        userId: user.id        // Grab userId ( : parameter content)
+                    }, process.env.JWT_KEY)    // Make sure the token won't be modified by someone else
                         res.status(200).json({
                             message: "Authentication successful!",
-                            token: token
-                        });
-                    });
+                            token: token,      // Token retrieval
+                            userId: user.id
+                        })
                 } else {
                     res.status(401).json({
                         message: "Invalid credentials!"
