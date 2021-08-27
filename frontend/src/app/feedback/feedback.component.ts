@@ -15,7 +15,7 @@ export class FeedbackComponent implements OnInit {
   // gameName : any;
   postId : any;
   comments : [];
-  UserId : any;
+
 
    commentForm = new FormGroup({
 
@@ -30,7 +30,7 @@ export class FeedbackComponent implements OnInit {
               private router : Router) { }
 
   ngOnInit(): void {
-    this.UserId = this.authService.getIdByToken();
+   
     this.commentService.showAllComments(this.activatedRoute.snapshot.params['id']).subscribe(
       (resp)=> {
         console.log(resp);
@@ -61,7 +61,10 @@ export class FeedbackComponent implements OnInit {
       console.log(response);
       });
     this.showAllComments();
+}
 
+refreshPage() {
+   window.location.reload();
 }
 
 }

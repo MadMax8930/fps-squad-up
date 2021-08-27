@@ -1,10 +1,12 @@
 <form [formGroup]="commentForm" (ngSubmit)="submitComment()">
     <input type="text" id="content" formControlName="content">
-    <button class="btn btn-primary" type="submit">Comment</button>
+    <button class="btn btn-primary" type="submit" (click)="refreshPage()">Comment</button>
 </form>
 
 <div class="container" *ngFor="let comment of comments">
     <div class="comment">
+        <p>{{comment.UserId}}</p>
         <p>{{comment.content}}</p>
+        <p>{{comment.createdAt | date:"MM/dd/yy h:mm:ss"}}</p>
     </div>
 </div>

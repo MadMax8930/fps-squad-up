@@ -70,7 +70,7 @@ function showAllComments(req, res){
     const UserId = req.userData.userId;
     const PostId = req.params.postId;
 
-    models.Comment.findAll({where: {userId: UserId, postId: PostId}}).then(result => {
+    models.Comment.findAll({where: {postId: PostId}}).then(result => {
         res.status(200).json(result);
     }).catch(error => {
         res.status(500).json({

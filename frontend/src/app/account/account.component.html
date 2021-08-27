@@ -3,7 +3,7 @@
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <h3 class="text-center">All your squad Posts</h3>
+            <h3 class="text-center">Welcome</h3>
         </div>
         <div class="card-body">
             <p> In order to find your squad mate, a decent teammate, maybe even a perfect match...
@@ -32,7 +32,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let post of posts">
-                        <td data-label="Post Id">{{post.id}}</td>
+                        <a [routerLink]="['/feedback', post.id]"><td data-label="Post Id">{{post.id}}</td></a>
                         <td data-label="Game">{{post.GameId}}</td>
                         <td data-label="My Post">{{post.content}}</td>
                         <td data-label="Extra">{{post.title}}</td>
