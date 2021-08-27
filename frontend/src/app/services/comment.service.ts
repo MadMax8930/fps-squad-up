@@ -20,7 +20,7 @@ export class CommentService {
     return this.http.post<any>(`${this.baseUrl}/user/post/${comment.PostId}/comment`, comment);
   }
 
-  showAllComments(comment: Comment):Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/user/post/${comment.PostId}/comments`);
+  showAllComments(comment):Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/user/post/${comment}/comments`);
   }
 }

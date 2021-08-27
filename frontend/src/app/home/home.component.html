@@ -1,8 +1,8 @@
 <app-navbar-user></app-navbar-user>
-<p>works</p>
 <div class="container" *ngFor="let post of posts">
     <div class="post">
-      <a [routerLink]="['/feedback', post.id]"><p>{{post.title}}</p></a>
+      <a [routerLink]="['/feedback', post.id]"><p>{{post.id}}</p></a>
+        <p>{{post.title}}</p>
         <p>{{post.content}}</p>
         <p>{{post.UserId}}</p>
         <p>{{post.GameId}}</p>

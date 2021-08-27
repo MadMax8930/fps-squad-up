@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CommentService } from '../services/comment.service';
 import { PostService } from '../services/post.service';
 import { AuthService } from '../services/auth.service';
@@ -12,24 +12,30 @@ import { AuthService } from '../services/auth.service';
 })
 export class FeedbackComponent implements OnInit {
 
-  commentForm : FormGroup;
-  gameName : any;
+  // gameName : any;
   postId : any;
-  post : any;
-  comments : any[];
+  comments : [];
   UserId : any;
+
+   commentForm = new FormGroup({
+
+    content: new FormControl('', [Validators.required])
+    
+    });
 
   constructor(private activatedRoute : ActivatedRoute, 
               private postService : PostService, 
               private authService: AuthService,
-              private commentService : CommentService) {
-                this.commentForm = new FormGroup({});
-               }
+              private commentService : CommentService,
+              private router : Router) { }
 
   ngOnInit(): void {
     this.UserId = this.authService.getIdByToken();
-    this.showAllComments();
-    this.initForm();
+    this.commentService.showAllComments(this.activatedRoute.snapshot.params['id']).subscribe(
+      (resp)=> {
+        console.log(resp);
+        this.comments = resp}
+    );
   }
 
   showAllComments() {
@@ -42,22 +48,19 @@ export class FeedbackComponent implements OnInit {
     )
   }
 
-  initForm(){
-    this.commentForm = new FormGroup ({
-     content: new FormControl('', [Validators.required])
-    })
-  }
-
   submitComment(){
     const comment = {
       content: this.commentForm.value.content,
-      PostId: this.activatedRoute.snapshot.params['PostId']
+      PostId: this.activatedRoute.snapshot.params['id']
     }
-
-    console.log(comment)
-    this.commentService.createComment(comment).subscribe();
+    const formValues = this.commentForm.value;
+    console.log(formValues)
+    this.commentService.createComment(comment).subscribe(
+      (response) => {
+      console.log('Comment created successfully!');
+      console.log(response);
+      });
     this.showAllComments();
-    this.initForm();
 
 }
 

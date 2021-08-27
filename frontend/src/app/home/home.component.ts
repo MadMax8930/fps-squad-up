@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 import { PostService } from '../services/post.service';
 
 @Component({
@@ -8,9 +10,12 @@ import { PostService } from '../services/post.service';
 })
 export class HomeComponent implements OnInit {
 
-  posts: any;
+  posts: [];
+  post: any;
+  userId: any;
+  postId: any;
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService, private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.postService.readAllPost().subscribe(
