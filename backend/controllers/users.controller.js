@@ -65,12 +65,14 @@ function login(req, res) {
 
                 if (result) {                  // Token creation
                     const token = jwt.sign({   // Sign function jwt package
-                        userId: user.id        // Grab userId ( : parameter content)
+                        userId: user.id,
+                        userName: user.name    // Grab userId ( : parameter content)
                     }, process.env.JWT_KEY)    // Make sure the token won't be modified by someone else
                         res.status(200).json({
                             message: "Authentication successful!",
                             token: token,      // Token retrieval
-                            userId: user.id
+                            userId: user.id,
+                            userName: user.name
                         })
                 } else {
                     res.status(401).json({
@@ -78,7 +80,6 @@ function login(req, res) {
                     });
                 }
             });
-
         }
 
     }).catch(error => {

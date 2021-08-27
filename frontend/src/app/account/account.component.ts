@@ -15,11 +15,13 @@ export class AccountComponent implements OnInit {
   post: any;
   userId: any;
   postId: any;
+  userName: any;
 
   constructor(private postService: PostService, private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.showMyPosts();
+    this.userName = localStorage.getItem("USER_NAME");
   }
 
   showMyPosts() {
