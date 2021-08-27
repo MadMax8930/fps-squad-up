@@ -26,7 +26,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { UpdatePostComponent } from './update-post/update-post.component';
-import { FeedbackComponent } from './feedback/feedback.component'; 
+import { FeedbackComponent } from './feedback/feedback.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,9 @@ import { FeedbackComponent } from './feedback/feedback.component';
     PostComponent,
     NavbarUserSearchComponent,
     UpdatePostComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    NotFoundComponent,
+
   ],
   imports: [
     CommonModule,

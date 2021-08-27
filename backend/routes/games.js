@@ -5,6 +5,6 @@ const authMiddleware = require('../middleware/auth');
 
 const router = express.Router();
 
-router.get('/games', authMiddleware.checkAuth, gamesController.findAll)
+router.get('/games', authMiddleware.checkAuth, gamesController.findGames)
 
 module.exports = router;

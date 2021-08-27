@@ -1,1 +1,4 @@
-<p>feedback works!</p>
+<form [formGroup]="commentForm" (ngSubmit)="submitComment()">
+    <input type="text" formControlName="content">
+    <button class="btn btn-primary" type="submit">Comment</button>
+</form>

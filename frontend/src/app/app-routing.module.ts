@@ -9,6 +9,7 @@ import { AccountComponent } from './account/account.component';
 import { UpdatePostComponent } from './update-post/update-post.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { PostComponent } from './post/post.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,10 @@ const routes: Routes = [
     { path: 'post', component: PostComponent, canActivate: [AuthGuard]},
     { path: 'update/:id', component: UpdatePostComponent, canActivate: [AuthGuard]},
     { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
-    { path: 'feedback', component: FeedbackComponent, canActivate: [AuthGuard]}
+    { path: 'feedback/:id', component: FeedbackComponent, canActivate: [AuthGuard]},
+    { path: 'not-found', component: NotFoundComponent },
+    { path: '**', redirectTo: 'not-found'}
+    
 ];
 
 @NgModule({

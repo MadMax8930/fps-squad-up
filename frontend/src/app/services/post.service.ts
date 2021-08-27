@@ -20,11 +20,11 @@ export class PostService {
   }
 
   readPost(post: Post):Observable<any> {
-    return this.http.get<any>(this.baseUrl + "/post/:id")
+    return this.http.get<any>(this.baseUrl + "/post/:id");
   }
 
   readAllPost():Observable<any> {
-    return this.http.get<any>(this.baseUrl + "/posts")
+    return this.http.get<any>(this.baseUrl + "/posts");
   }
 
   updatePost(id, UserId, post: Post):Observable<any> {
@@ -36,7 +36,7 @@ export class PostService {
   }
 
   readAllMyPosts(post: Post):Observable<any> {
-    return this.http.get<any>(this.baseUrl + "/user/posts")
+    return this.http.get<any>(this.baseUrl + "/user/posts");
   }
 
   readAllPostsByGameId(post: Post):Observable<any> {

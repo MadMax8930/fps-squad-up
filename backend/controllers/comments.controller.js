@@ -4,12 +4,15 @@ const validatorClass = require('fastest-validator');
 /////// CREATE///////
 
 function createComment(req, res) {
+    console.log("create comment")
 
     const comment = {
         content: req.body.content,
         PostId: +req.params.postId,
-        UserId: +req.params.userId
+        UserId: +req.userData.userId
     }
+
+    console.log(comment)
 
     ///// Validation for Create /////
 
@@ -64,7 +67,10 @@ function showComment(req, res){
 
 function showAllComments(req, res){
 
-    models.Comment.findAll().then(result => {
+    const UserId = req.userData.userId;
+    const PostId = req.userData.postId;
+
+    models.Comment.findAll({where: {userId: UserId, postId: PostId}}).then(result => {
         res.status(200).json(result);
     }).catch(error => {
         res.status(500).json({

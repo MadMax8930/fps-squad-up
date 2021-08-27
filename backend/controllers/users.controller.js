@@ -26,6 +26,7 @@ function register(req, res) {
                     }
 
                     models.User.create(user).then(result => {
+            
                         res.status(201).json({
                             message: "User successfully created",
                         });
@@ -61,7 +62,7 @@ function login(req, res) {
             bcryptjs.compare(req.body.password, user.password, function (err, result) {
 
                 ///// User Token generation if password match /////
-                
+
                 if (result) {                  // Token creation
                     const token = jwt.sign({   // Sign function jwt package
                         userId: user.id        // Grab userId ( : parameter content)

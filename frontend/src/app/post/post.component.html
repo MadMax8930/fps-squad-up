@@ -13,7 +13,7 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="text-center">
-                                <img src="/assets/logoBrand.png" alt="logo" border="0">
+                                <img src="/assets/logoBrand.png" alt="logo" border="0" routerLink='/account'>
                                 <h2 class="text-center squad-post">Add New Squad Post</h2>
                                 <div class="add-text-1">
                                 <p><i>What kind of player are you looking for?</i></p>
@@ -37,14 +37,14 @@
                                  
                                     <div class="form-group d-flex justify-content-center">
                                         <div class="input-group">
-                                            <input id="post" formControlName="content" placeholder="Your Title" class="form-control" type="text" name="content" aria-label="post" aria-describedby="post-addon">
+                                            <input id="post" formControlName="content" placeholder="Add Title" class="form-control" type="text" name="content" aria-label="post" aria-describedby="post-addon">
                                             <span class="input-group-text" id="post-addon"></span>
                                         </div>
                                     </div>
                                 
                                     <div class="form-group d-flex justify-content-center">
                                         <div class="input-group">
-                                            <textarea id="title" formControlName="title"  placeholder="Your Post" class="form-control" type="text" name="title" aria-label="by" aria-describedby="by-addon"></textarea>
+                                            <textarea id="title" formControlName="title"  placeholder="Add Post" class="form-control" type="text" name="title" aria-label="by" aria-describedby="by-addon"></textarea>
                                             <span class="input-group-text" id="by-addon"></span>               
                                         </div>
                                     </div>
@@ -53,7 +53,8 @@
                                         <label for="postImage"></label>
                                         <input type="file" class="form-control-file" id="postImage">
                                     </div> -->
-<div class="add-text-2">
+
+                                 <div class="add-text-2">
                                     <p><small>All your posts are visible from your <a href="/account">account</a></small></p>
                                 </div>
             

@@ -5,11 +5,9 @@ const authMiddleware = require('../middleware/auth');
 
 const router = express.Router();
 
-//Unauthenticated Visitor
-router.get('/post/:postId/comment/:id', commentsController.showComment); // get a comment of one post
-router.get('/post/:postId/comments', commentsController.showAllComments); // get all comments of one post
 //Authenticated User
-router.post('/user/:userId/post/:postId/comment', authMiddleware.checkAuth, commentsController.createComment); // create a comment on one specific post
+router.get('/user/post/:postId/comments', authMiddleware.checkAuth, commentsController.showAllComments); // read all comments on one specific post
+router.post('/user/post/:postId/comment', authMiddleware.checkAuth, commentsController.createComment); // create a comment on one specific post
 router.put('/user/:userId/post/:postId/comment/:id', authMiddleware.checkAuth, commentsController.updateComment); // update my comment on any post by postId
 router.delete('/user/:userId/post/:postId/comment/:id', authMiddleware.checkAuth, commentsController.deleteComment); // delete my comment on any post by postId
 

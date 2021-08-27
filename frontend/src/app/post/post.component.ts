@@ -35,7 +35,7 @@ export class PostComponent implements OnInit {
       this.gameService.getGames().subscribe((resp) => {
         this.games = resp;
         console.log(this.games);
-      })
+      });
       this.userId = this.authService.getIdByToken();
 
     }
@@ -45,8 +45,7 @@ export class PostComponent implements OnInit {
       title: this.formBuilder.control(""),
       content: this.formBuilder.control(""),
       gameId: this.formBuilder.control("")
-      })
-      
+      }) 
     }
     
   

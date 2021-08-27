@@ -1,7 +1,7 @@
 const models = require('../models')
 const validatorClass = require('fastest-validator');
 
-exports.findAll = (req, res) => {
+exports.findGames = (req, res) => {
     models.Game.findAll().then((games) => {
         res.send(games)
     })
