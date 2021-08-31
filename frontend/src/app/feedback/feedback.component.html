@@ -1,12 +1,30 @@
-<form [formGroup]="commentForm" (ngSubmit)="submitComment()">
-    <input type="text" id="content" formControlName="content">
-    <button class="btn btn-primary" type="submit" (click)="refreshPage()">Comment</button>
-</form>
+<body>
+    <div class="wrapper" id="img">
+    <div class="main-container">
 
-<div class="container" *ngFor="let comment of comments">
-    <div class="comment">
-        <p>{{comment.UserId}}</p>
-        <p>{{comment.content}}</p>
-        <p>{{comment.createdAt | date:"MM/dd/yy h:mm:ss"}}</p>
+        <form [formGroup]="commentForm" (ngSubmit)="submitComment()">
+            <div class="d-flex justify-content-center py-5"> 
+               <input type="text" id="content" formControlName="content" class="form-control addtxt" placeholder="Add your comment">
+               <button class="btn btn-danger" type="submit" (click)="refreshPage()">Comment</button>
+            </div>
+        </form>
+
+        <div class="redirection-text">
+            <p><a href="/home">Back to the search page</a></p>
+        </div>
+
+        <div class="container">
+            <div *ngFor="let comment of comments">
+                <div class="d-flex justify-content-center py-2">
+                    <div class="com py-2 px-2"> <span class="text1">{{comment.content}}</span>
+                        <div class="d-flex justify-content-between py-1 pt-2">
+                           <div><span class="text2"><i class="fa fa-user-circle-o"></i>{{comment.UserId}}</span></div>
+                           <div><span class="text3">{{comment.createdAt | date:"MM/dd/yy h:mm:ss"}}</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
     </div>
-</div>
+</body>

@@ -17,7 +17,7 @@
   }
 
   .d-flex{
-    min-height: 66vh;
+    min-height: 30vh;
   }
 
 .h5 {
@@ -37,6 +37,8 @@
     .carousel-caption{
        top: 46%;
       }
+
+
 }
 
 
@@ -90,4 +92,8 @@
     width: 100%;
     background: #202122;
 
+  }
+
+  .d-flex{
+    min-height: 60vh;
   }

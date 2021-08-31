@@ -33,7 +33,7 @@ export class AccountComponent implements OnInit {
 
   deleteOnClick(id, UserId){
     this.postService.deletePost(id, UserId).subscribe(posts => {
-      console.log('Post updated successfully!');
+      console.log('Post deleted successfully!');
       console.log(posts);
       this.showMyPosts();
     });

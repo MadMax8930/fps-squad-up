@@ -1,31 +1,32 @@
 <app-navbar-user-search></app-navbar-user-search>
-
+<body>
+    <div class="wrapper" id="img">
 <div class="container">
-    <div class="card">
-        <div class="card-header">
-            <h3 class="text-center">Welcome {{userName}}</h3>
-        </div>
-        <div class="card-body">
-            <p> In order to find your squad mate, a decent teammate, maybe even a perfect match...
-                Soldier, you need to make a "squad post"! Custom post with a title, visible by other users/gamers. 
+    <div class="welcome-user">
+        <br><h2 class="text-center">Welcome {{userName}}!</h2>
+        <div class="intro-text"><blockquote>
+            <i>In order to find your squad mate, you need to make a "squad post", visible by other users/gamers.<br><br>
 
-                A post where you can write for example: what type of player are you looking for? 
-                A post where you can ask for a squad mate with particular skills, playing from a specific region, on a gaming system of your choice. 
-                A post where you can share your gamertag with your availability, or post a screenshot with some gaming accomplishments of yours. It's really up to you!  
+                A post where you can write for example: what type of player are you looking for? <br>
+                A post where you can ask for a squad mate from a specific region, playing on a gaming system of your choice. <br>
+                A post where you can share your gamertag with your availability. It's really up to you! <br> <br>
 
-                Here, you will find all your squad posts. You will be able to edit and/or delete them. 
+                Here, you will find all your squad posts. You will be able to edit and/or delete them.<br>
                 Good luck soldier on your seeking quest!
-             </p>
-            <div class="btn-navigate text-center">
-                <button class="btn btn-primary" [routerLink]="['/post']">Add a new post</button> 
-            </div>
+        </i></blockquote></div>
+    </div>
+    
+    <div class="card-header">
+            <button class="btn btn-secondary btn-add" [routerLink]="['/post']">NEW POST</button> 
+        <div class="card-body">
+            <div class="scrollit">
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">Post Id</th>
                         <th scope="col">Game</th>
-                        <th scope="col">My Post</th>
-                        <th scope="col">Extra</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Post</th>
                         <th scope="col">Edit Post</th>
                         <th scope="col">Delete Post</th>
                     </tr>
@@ -34,14 +35,16 @@
                     <tr *ngFor="let post of posts">
                         <a [routerLink]="['/feedback', post.id]"><td data-label="Post Id">{{post.id}}</td></a>
                         <td data-label="Game">{{post.GameId}}</td>
-                        <td data-label="My Post">{{post.content}}</td>
-                        <td data-label="Extra">{{post.title}}</td>
+                        <td data-label="Title">{{post.content}}</td>
+                        <td data-label="Post">{{post.title}}</td>
                         <td data-label="Edit"><button class="btn btn-warning" [routerLink]="['/update', post.id]">Edit</button></td>
                         <td data-label="Delete"><button class="btn btn-danger" (click)="deleteOnClick(post.id, post.UserId)">Delete</button></td>
                     </tr>
                 </tbody>
-            </table>
+            </table></div>
 
         </div>
     </div>
 </div>
+</div>
+</body>
