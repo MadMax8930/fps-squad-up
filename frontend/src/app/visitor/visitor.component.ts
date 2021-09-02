@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PostService } from '../services/post.service';
 
@@ -24,6 +24,10 @@ export class VisitorComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  toggleShow() {
+  this.showCard = !this.showCard;
+  }
+
   randomPost(){
     this.showCard = true;
     this.postService.findRandom(this.post)
@@ -32,5 +36,5 @@ export class VisitorComponent implements OnInit {
       this.post = post
     });
   };
-
+  
 }

@@ -1,7 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+.carousel {
+  width: 100%;
+  margin: 0 auto;
+}
 
+.main-carousel {
+  width: 100%;
+  background: #202122;
+}
+
+.d-flex{
+  min-height: 80vh;
+}
 
 .carousel-inner{
     position: relative;
@@ -16,11 +28,9 @@
     top: 46%;
   }
 
-  .d-flex{
-    min-height: 30vh;
-  }
-
-.h5 {
+h5, p{
+  font-family:'Rubik';
+  font-size: 15px;
     
 }  
 
@@ -37,8 +47,6 @@
     .carousel-caption{
        top: 46%;
       }
-
-
 }
 
 
@@ -76,24 +84,9 @@
 }
 
   
-  @media only screen and (min-width : 1200px) {
+  @media screen and (min-width : 1200px) {
     .carousel-caption
     {
       left: 6%;
     }
-  }
-
-  .carousel {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .main-carousel {
-    width: 100%;
-    background: #202122;
-
-  }
-
-  .d-flex{
-    min-height: 60vh;
   }

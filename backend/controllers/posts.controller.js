@@ -79,7 +79,7 @@ function readPost(req, res){
 
 function readAllPosts(req, res){
 
-    models.Post.findAll().then(result => {
+    models.Post.findAll({order: [['createdAt', 'DESC']]}).then(result => {
         res.status(200).json(result);
     }).catch(error => {
         res.status(500).json({

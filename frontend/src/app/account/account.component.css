@@ -66,7 +66,7 @@ table {
     width:100%;
     height:100%;
     position: absolute;
-    background-image: url("/assets/home.jpg"); 
+    background-image: url("/assets/account.png"); 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -118,12 +118,54 @@ table {
     }
   }
 
-  @media screen and (max-width: 460px) {
+  @media screen and (max-width: 480px) {
 
     h3 {
         font-family: "Press Start 2P";
         font-size: x-small;
     }
 
+    .intro-text {
+      font-family: "Rubik";
+      color: white;
+      font-weight: 600;
+      font-size: 11px;
+    }
+
+    .card-header {
+      height: 120px;
+    }
+
+  }
+
+  @media screen and (max-width: 900px) {
+
+    .card-header {
+      height: 180px;
+    }
+
+    .intro-text {
+      font-family: "Rubik";
+      color: white;
+      font-weight: 600;
+      font-size: 10px;
+    }
+  }
+
+  @media screen and (max-width: 380px) {
+
+    .card-header {
+      height: 90%;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .intro-text {
+      font-family: "Rubik";
+      color: white;
+      font-weight: 600;
+      font-size: 8px;
+    }
   }
 

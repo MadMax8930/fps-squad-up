@@ -1,15 +1,18 @@
 <app-navbar-user></app-navbar-user>
+<section>
 <div class="home">
 <div class ="column">
 <div class="container card" *ngFor="let post of posts">
-    <div class="post-card-content">
+    <div class="post-card-content" [routerLink]="['/feedback', post.id]">
         <div class="post-id"><a [routerLink]="['/feedback', post.id]"><p>{{post.id}}</p></a></div>
         <div class="post-title">{{post.title}}</div>
         <div class="post-content">{{post.content}}</div>
-        <div class="post-name">{{post.UserId}}</div>
-        <div class="post-category">{{post.GameId}}</div>
+        <div class="post-name"><a [routerLink]="['/feedback', post.id]"><p>{{post.UserId}}</p></a></div>
+        <!-- <div class="post-category">{{post.GameId}}</div> -->
     </div>
 </div>
 </div>
 </div>
-<!-- <app-footer></app-footer> -->
+</section>
+<app-about></app-about>
+<app-footer></app-footer>

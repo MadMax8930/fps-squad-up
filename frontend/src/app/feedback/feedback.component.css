@@ -71,5 +71,14 @@ body {
     font-family: 'Press Start 2P';  
     font-size: medium;
     font-weight: 500;
-    color: grey;
+    color: #c9963b;
+}
+
+
+@media screen and (max-width: 480px) {
+
+    .main-container {
+        width: 300px;
+    }
+
 }
