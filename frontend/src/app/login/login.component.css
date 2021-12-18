@@ -130,7 +130,7 @@ p a {
     width:100%;
     height:100%;
     position: absolute;
-    background-image: url("/assets/banner-signup.jpg"); 
+    background-image: linear-gradient(rgba(27, 26, 26, 0.151), black), url("/assets/log.jpg"); 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
