@@ -37,7 +37,6 @@ export class PostComponent implements OnInit {
         console.log(this.games);
       });
       this.userId = this.authService.getIdByToken();
-
     }
   
     initForm() {

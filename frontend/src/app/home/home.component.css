@@ -40,7 +40,21 @@ section {
    opacity: 0.85;
 }
 
-.post-id a {
+.post-id  {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.post-id a  {
+  text-decoration: none;
+  font-family: 'Press Start 2P';
+  color: grey;
+  font-size: x-small;
+}
+
+
+.post-id a:first-child {
   text-decoration: none;
   color: red;
   font-family: 'Press Start 2P';

@@ -12,6 +12,7 @@ import { AuthService } from '../services/auth.service';
 export class UpdatePostComponent implements OnInit {
 
   UserId : any;
+  alert: boolean = false;
 
   updateForm = new FormGroup({
 
@@ -36,8 +37,15 @@ export class UpdatePostComponent implements OnInit {
     .subscribe((response) => {
       console.log('Post updated successfully!');
       console.log(response);
-      this.router.navigate(['/account']);
+      this.alert = true;
+      setTimeout(() => {
+        this.router.navigate(['/account']); 
+      }, 5000);
       })
+  }
+
+  closeAlert() {
+      this.alert = false;
   }
 
 }

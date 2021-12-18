@@ -19,10 +19,6 @@ export class PostService {
     return this.http.post<any>(`${this.baseUrl}/user/${UserId}/post`, post);
   }
 
-  readPost(post: Post):Observable<any> {
-    return this.http.get<any>(this.baseUrl + "/post/:id");
-  }
-
   readAllPost():Observable<any> {
     return this.http.get<any>(this.baseUrl + "/posts");
   }
@@ -37,6 +33,10 @@ export class PostService {
 
   readAllMyPosts(post: Post):Observable<any> {
     return this.http.get<any>(this.baseUrl + "/user/posts");
+  }
+
+  readPost(post: Post):Observable<any> {
+    return this.http.get<any>(this.baseUrl + "/post/:id");
   }
 
   readAllPostsByGameId(post: Post):Observable<any> {

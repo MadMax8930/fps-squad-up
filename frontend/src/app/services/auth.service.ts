@@ -49,6 +49,11 @@ export class AuthService {
     const id = decodedToken.userId;
     return id;
   }
+
+//   This library provides an HttpInterceptor 
+//   which automatically attaches a JWToken to HttpClient requests.
+//   You will use a regular HTTP request to authenticate your users and 
+//   then save their JWTs in local storage or in a cookie if successful.
   
   logout() {
     localStorage.removeItem('TOKEN_APPLI');

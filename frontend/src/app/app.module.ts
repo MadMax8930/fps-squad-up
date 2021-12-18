@@ -28,6 +28,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { UpdatePostComponent } from './update-post/update-post.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { PreloaderComponent } from './preloader/preloader.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     UpdatePostComponent,
     FeedbackComponent,
     NotFoundComponent,
+    PreloaderComponent,
 
   ],
   imports: [

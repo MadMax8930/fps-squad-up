@@ -34,7 +34,6 @@ body {
 
 .form-signin {
     width: 100%;
-	animation: rotateAngle 6s linear infinite;
 }
 
 .form-floating {
@@ -84,26 +83,6 @@ h1 {
 .text-register {
     color: rgb(151, 140, 140);
     font-family: 'Rubik';
-}
-
-@keyframes rotateAngle {
-	0% {
-		transform: rotateY(0deg) rotateX(10deg);
-		animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
-	}
-	25% {
-		transform: rotateY(20deg) rotateX(10deg);
-	}
-	50% {
-		transform: rotateY(0deg) rotateX(10deg);
-		animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
-	}
-	75% {
-		transform: rotateY(-20deg) rotateX(10deg);
-	}
-	100% {
-		transform: rotateY(0deg) rotateX(10deg);
-	}
 }
 
 /*Responsive*/
