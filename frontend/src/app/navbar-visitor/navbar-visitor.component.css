@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 /*-------------mobile----------------*/
@@ -24,8 +23,8 @@
   }
 
   .container-logo {
-    width: 25%;
-    height: 25%;
+    width: 40%;
+    height: 20%;
     content: url('/assets/logo-web-white.png');
     animation: rotateAngle 6s linear infinite;
   }
@@ -55,210 +54,64 @@
     height: 100%;
   }
 
-  .btn {
-    font-family: 'Rubik Mono One', sans-serif; 
-    font-weight: 500;
-    font-size: 6px;
-  }
-
-  .btn-1 {
-    padding: 3px 3px;
-    background-color: rgba(101, 126, 111, 0.8);
-    color: #e3e1e4;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    text-decoration: none;
-  }
-
-  .btn-2 {
-    padding: 3px 3px;
-    background-color: rgba(238, 12, 23, 0.8);
-    color: #e3e1e4;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    text-decoration: none;
-  }
-  
-  .btn-1:hover {
-    background-color: rgba(251, 255, 0, 0.884);
-    color: #24252a;
-  }
-
-  .btn-2:hover {
-    background-color: rgba(251, 255, 0, 0.884);
-    color: #24252a;
-  }
-  
 
 /* -------------destop------------ */
 
-@media screen and (min-width: 400px) {
-
-
-  .btn {
-    font-weight: 400;
-    font-size: 8px;
-  }
-
-  button {
-    padding: 2px 4px;
-  }
+@media screen and (max-width: 420px) {
 
   .container-logo {
-    width: 18%;
-    height: 18%;
-    content: url('/assets/logo-web-white.png');
+    width: 55%;
   }
 
 }
 
-
-@media screen and (min-width: 620px) {
-
-   .btn {
-    font-weight: 500;
-    font-size: 10px;
-  }
-
-  button {
-    padding: 4px 6px;
-    background-color: rgba(238, 12, 23, 0.8);
-    color: #e3e1e4;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    text-decoration: none;
-  }
+@media (min-width: 420px) and (max-width: 530px) {
 
   .container-logo {
-    width: 16%;
-    height: 16%;
-    content: url('/assets/logo-web-white.png');
+    width: 40%;
+    
   }
 
 }
 
 
-@media screen and (min-width: 890px) {
-
-   .btn {
-    font-weight: 500;
-    font-size: 13px;
-  }
-
-  button {
-    padding: 3px 7px;
-    background-color: rgba(238, 12, 23, 0.8);
-    color: #e3e1e4;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    text-decoration: none;
-  }
+@media (min-width: 530px) and (max-width: 680px) {
 
   .container-logo {
-    width: 16%;
-    height: 16%;
-    content: url('/assets/logo-web-white.png');
+    width: 32%;
   }
-
 }
 
 
-@media screen and (min-width: 1120px) {
-
-   .btn {
-    font-weight: 500;
-    font-size: 16px;
-  }
-
-  button {
-    padding: 3px 7px;
-    background-color: rgba(238, 12, 23, 0.8);
-    color: #e3e1e4;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    text-decoration: none;
-  }
+@media (min-width: 680px) and (max-width: 768px) {
 
   .container-logo {
-    width: 16%;
-    height: 16%;
-    content: url('/assets/logo-web-white.png');
+    width: 26%;
   }
+
 }
 
 
-@media screen and (min-width: 1260px) {
-
-  .navbar-text{
-    margin-right: 75px;
-  }
-}
-
-@media screen and (min-width: 620px) and (max-width: 960px) {
-
-  .navbar-text{
-    margin-right: 15px;
-  }
-
-  .btn {
-    font-size: 12px;
-  }
+@media (min-width: 768px) and (max-width: 900px) {
 
   .container-logo {
-    width: 20%;
-    height: 20%;
-    content: url('/assets/logo-web-white.png');
+    width: 22%;
   }
+
 }
 
-@media screen and (min-width: 960px) and (max-width: 1120px) {
-
-  .navbar-text{
-    margin-right: 25px;
-  }
-}
-
-@media screen and (min-width: 1120px) and (max-width: 1260px) {
-
-  .navbar-text{
-    margin-right: 45px;
-  }
-}
-
-
-@media screen and (min-width: 400px) and (max-width: 620px) {
-
-  .navbar-text{
-    margin-right: 5px;
-  }
-
-  .btn {
-    font-size: 10px;
-  }
+@media (min-width: 900px) and (max-width: 1200px) {
 
   .container-logo {
-    width: 25%;
-    height: 25%;
-    content: url('/assets/logo-web-white.png');
+    width: 18.5%;
   }
+
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (min-width: 1200px) {
 
-  .navbar-text{
-    margin-right: 10px;
+  .container-logo {
+    width: 14%;
   }
+
 }
-
-@media screen and (min-width: 1260px) {
-
-  .navbar-text{
-    margin-right: 75px;
-  }
-}
-

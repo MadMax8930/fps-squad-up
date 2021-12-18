@@ -8,7 +8,8 @@ function register(req, res) {
 
     ///// Duplicate Email Check /////
 
-    models.User.findOne({ where: { email: req.body.email } }).then(result => {
+    models.User.findOne({ where: { email: req.body.email } 
+    }).then(result => {
         if (result) {
             res.status(409).json({
                 message: "Email already exists!",

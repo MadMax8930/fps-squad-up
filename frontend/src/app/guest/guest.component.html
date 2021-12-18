@@ -1,6 +1,6 @@
 <app-navbar-visitor></app-navbar-visitor>
-<app-about></app-about>
-<app-visitor></app-visitor>
+<!-- <app-about></app-about> -->
+<!-- <app-visitor></app-visitor> -->
 <!-- <app-preloader></app-preloader> -->
 <!-- <app-navbar-visitor></app-navbar-visitor>
 <app-carousel></app-carousel>
@@ -18,12 +18,26 @@
             <video class="video-container" autoplay muted loop>
                 <source src="assets/banner-vid.mp4" type="video/mp4" />
             </video>
+
+            <div class="btn-account">
+               <a class="btn" routerLink="/register"><button type="button" class="btn btn-1">SIGNUP</button></a>
+               <a class="btn" routerLink="/login"><button type="button" class="btn btn-2">LOGIN</button></a>
+            </div>
     
             <div class="intro-container">
                 <h1>For Gamers by Gamers</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius impedit non libero distinctio tenetur consectetur velit deserunt nulla. Temporibus, obcaecati?</p>
-                <a href="tours" class="scroll-link btn btn-white">Random Post</a>
+                <p>Fps-Squad-Up allows you to find gamer buddies to play with. <br>login, synergize and win in your favorite first-person-shooters.</p>
+                <a [routerLink]="" (click)="randomPost()" class="scroll-link btn btn-white">Random Post</a>
             </div>
+            <!-- Random Post Generator -->
+    
+            <div class="card" *ngIf="showCard">
+                <div class="card-body" (click)="toggleShow()">
+                    <h3 class="card-title mb-2 text-muted">{{post.title}}</h3>
+                    <p class="card-text mb-2 text-muted">{{post.content}}</p>
+                </div>
+            </div>
+    
             <button class="switch-btn">
                 <span>Play</span>
                 <span>Pause</span>

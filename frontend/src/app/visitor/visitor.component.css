@@ -9,7 +9,7 @@
     color: snow;
   }
 
-  .btn {
+  .btn2 {
     position: absolute;
     top: -50%;
     left: 50%;
@@ -25,7 +25,7 @@
     font-family:'Press Start 2P', 'Arial Narrow', Arial, sans-serif;
   }
   
-  .btn:hover {
+  .btn2:hover {
     background-color: black;
   }
   
