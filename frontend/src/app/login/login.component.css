@@ -1,18 +1,127 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap');
 
-body {
-    margin: 0px;
-    padding: 0px;
-    overflow: hidden;
+  body {
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
 }
 
-.logo-website { 
-    width: auto;
-    height: auto;
-    text-align: center;
-    display: inline-block;
-    margin-bottom: -10px;
+.form {
+  background-color: #15172b;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 500px;
+  padding: 20px;
+  width: 320px;
+}
+
+.title {
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+.subtitle {
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+p {
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+p a {
+    text-decoration: none;
+    color: #08d;
+}
+
+.input-container {
+  height: 48px;
+  position: relative;
+  width: 100%;
+}
+
+.ic1 {
+  margin-top: 30px;
+}
+
+.ic2 {
+  margin-top: 20px;
+}
+
+.input {
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  font-size: 16.5px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+  font-family:'Poppins';
+}
+
+.cut {
+  background-color: #15172b;
+  border-radius: 10px;
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  top: -20px;
+  transform: translateY(0);
+  transition: transform 200ms;
+  width: 76px;
+}
+
+.cut-short {
+  width: 50px;
+}
+
+.placeholder {
+
+  font-family: sans-serif;
+  left: 20px;
+  line-height: 12px;
+  pointer-events: none;
+  transform-origin: 50% 50%;
+  transition: transform 200ms, color 200ms;
+  top: 2000px;
+}
+
+.submit {
+  background-color: #08d;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 28px;
+  text-align: center;
+  width: 100%;
+}
+
+.submit:active {
+  background-color: #06b;
+}
+
+.input {
+    font-family:'Poppins';
 }
 
 .wrapper {
@@ -21,7 +130,7 @@ body {
     width:100%;
     height:100%;
     position: absolute;
-    background-image: url("/assets/login-bg.jpg"); 
+    background-image: url("/assets/banner-signup.jpg"); 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -32,126 +141,6 @@ body {
     overflow: hidden;
 }
 
-.form-signin {
-    width: 100%;
+label {
+    font-size: 0.9rem;
 }
-
-.form-floating {
-    width: 25%;
-    background-color: rgb(82, 77, 77);
-    border: 1px solid white;
-    margin: 20px auto;
-    padding: 3px;
-    -moz-border-radius: 12px;
-    -webkit-border-radius: 12px;
-    font-family: 'Rubik';
-}
-
-#login-position {
-    position: absolute;
-    top: 18%;
-    left: 1%
-}
-
-#floatingInput, #floatingPassword {
-    color: rgb(82, 77, 77);
-}
-
-label { 
-    font-family: 'Rubik Mono One', sans-serif;
-    font-size: small;
-}
-
-.btn {
-    width: 20%;
-    background-color: #61B6E7;
-    margin: 20px auto;
-    padding: 15px;
-    font-family: 'Rubik Mono One', sans-serif;
-}
-
-h1 {
-    font-family: 'Rubik Mono One', sans-serif;
-    color: rgb(82, 77, 77);
-}
-
-.text-register p a {
-    text-decoration: none;
-    font-family: 'Rubik';
-}
-
-.text-register {
-    color: rgb(151, 140, 140);
-    font-family: 'Rubik';
-}
-
-/*Responsive*/
-
-
-  @media only screen and (min-width: 960px) and (max-width: 1200px) {
-    .form-floating {
-        width: 45%;
-    }
-    .btn {
-        width: 20%;
-    }
-    .logo-website{
-        width: 30%;
-    }
-
-    #login-position {
-        top: 10rem;
-    }
-
-  }
-
-  @media screen and (min-width: 740px) and (max-width: 960px) {
-    .form-floating {
-        width: 45%;
-    }
-    .btn {
-        width: 25%;
-    }
-    .logo-website{
-        width: 40%;
-    }
-
-    #login-position {
-        top: 10rem;
-    }
-
-  }
-
-  @media screen and (min-width: 620px) and (max-width: 740px) {
-    .form-floating {
-        width: 55%;
-    }
-    .btn {
-        width: 25%;
-    }
-    .logo-website{
-        width: 40%;
-    }
-
-    #login-position {
-        top: 10rem;
-    }
-
-  }
-
-  @media screen and (min-width: 280px) and (max-width: 620px) {
-    .form-floating {
-        width: 75%;
-    }
-    .btn {
-        width: 40%;
-    }
-    .logo-website{
-        width: 60%;
-    }
-
-    #login-position {
-        top: 7rem;
-    }
-
-  }

@@ -8,38 +8,42 @@
             </a>
           </div>
         </span>
+       <form (ngSubmit) ="submitForm()"  [formGroup]="loginForm"> 
+          <div class="form">
+             <div class="title">Welcome back</div>
+             <div class="subtitle">Access your account!</div>
   
-        <form (ngSubmit) ="submitForm()"  [formGroup]="loginForm"> 
-          <h1>Access account</h1>
-  
-          <div class="form-floating">
-            <label id="floatingInput">Email</label>
+          <div class="form-floating input-container ic1">
             <input type="email" 
-                    class="form-control" 
-                    for="floatingInput" 
+                    class="form-control input" 
+                    for="email" 
                     placeholder="Email" 
                     name="email" 
+                    id="email" 
                     formControlName="email">
+                    <div class="cut"></div>
+            <label for="email">Email</label>
           </div>
   
-          <div class="form-floating">
-            <label id="floatingPassword">Password</label>
+          <div class="form-floating input-container ic1">
             <input type="password" 
-                    class="form-control" 
-                    for="floatingPassword" 
+                    class="form-control input" 
+                    for="password" 
                     placeholder="Password" 
                     name="password" 
                     formControlName="password">
+                    <div class="cut cut-short"></div>
+            <label id="password">Password</label>
           </div>
 
           <div class="text-register">
             <p>Not a member? <a href='/register'>Register</a></p>
           </div>
       
-          <button class="btn btn-lg btn-primary" 
+          <button class="btn btn-lg btn-primary submit" 
                   type="submit" 
-                  [disabled]="loginForm.invalid">LOGIN
-          </button>
+                  [disabled]="loginForm.invalid">LOGIN</button>
+        </div>
         </form>
       </div>
     </div>
