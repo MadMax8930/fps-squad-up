@@ -1,3 +1,9 @@
+section {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .container{
   border: 1px solid;
   box-shadow: 7px 7px 2px 1px rgba(0, 0, 255, .15);
@@ -132,6 +138,7 @@ section {
   }
   
 }
+
 
 /* @media screen and (max-width: 886px) and (min-width: 280px) {
 

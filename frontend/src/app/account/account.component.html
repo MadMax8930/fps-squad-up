@@ -1,9 +1,15 @@
-<app-navbar-user-search></app-navbar-user-search>
+<app-navbar-visitor></app-navbar-visitor>
 <body>
     <div class="wrapper" id="img">
 <div class="container">
     <div class="welcome-user">
         <br><h2 class="text-center">Welcome {{userName}}!</h2>
+
+            <div class="btn-account">
+              <a class="btn"><button type="button" class="btn btn-1" (click)="logout()">LOGOUT</button></a>
+              <a class="btn" routerLink="/home"><button type="button" class="btn btn-2">SEARCH</button></a>
+            </div>
+
         <div class="intro-text"><blockquote>
             <i>In order to find your squad mate, you need to make a "squad post", visible by other users/gamers.<br><br>
 
@@ -23,12 +29,13 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
+                        <th scope="col">Post</th>
                         <th scope="col">Post Id</th>
                         <th scope="col">Game</th>
                         <th scope="col">Title</th>
-                        <th scope="col">Post</th>
-                        <th scope="col">Edit Post</th>
-                        <th scope="col">Delete Post</th>
+                        <td scope="col">Post</td>
+                        <th scope="col"><i class="uil uil-edit"></i></th>
+                        <th scope="col"><i class="uil uil-trash-alt"></i></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,8 +44,8 @@
                         <td data-label="Game">{{post.GameId}}</td>
                         <td data-label="Title">{{post.content}}</td>
                         <td data-label="Post">{{post.title}}</td>
-                        <td data-label="Edit"><button class="btn btn-warning" [routerLink]="['/update', post.id]">Edit</button></td>
-                        <td data-label="Delete"><button class="btn btn-danger" (click)="deleteOnClick(post.id, post.UserId)">Delete</button></td>
+                        <td data-label="Edit"><button class="btn btn-warning" [routerLink]="['/update', post.id]"><i class="uil uil-edit-alt"></i></button></td>
+                        <td data-label="Delete"><button class="btn btn-danger" (click)="deleteOnClick(post.id, post.UserId)"><i class="uil uil-trash-alt"></i></button></td>
                     </tr>
                 </tbody>
             </table></div>

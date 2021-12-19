@@ -1,5 +1,33 @@
 <body>
-    <div class="wrapper" id="img">
+    <section>
+    <div class="wrapper">
+    <div class="comment-container">
+        <h4>Leave a Comment</h4>
+        <form [formGroup]="commentForm" (ngSubmit)="submitComment()">
+            <textarea placeholder='Add Your Comment' formControlName="content" type="text" id="content" class="form-control addtxt"></textarea>
+            <div class="btns">
+                <button class="btn btn-1 redirection-text"><a href="/home">Return</a></button>
+                <button class="btn btn-2" type="submit" (click)="refreshPage()">Comment</button>
+            </div>
+        </form>
+    </div>
+    
+
+    <div class="ng-container">
+            <div *ngFor="let comment of comments">
+                <div class="com card">
+                    <div class="row">
+                        <div class="t-2"><span class="text2"><i class="fa fa-crosshairs"></i>{{comment.UserId}}</span></div>
+                        <div class="t-3"><span class="text3"><i class="fa fa-envelope-open"></i>{{comment.createdAt | date:"MM/dd/yy h:mm:ss"}}</span></div>
+                    </div>
+                        <div class="t-1"><span class="text1">{{comment.content}}</span></div>
+                </div>
+            </div>
+    </div>
+    </div>
+</section>
+</body>
+    <!-- <div class="wrapper" id="img">
     <div class="main-container">
 
         <form [formGroup]="commentForm" (ngSubmit)="submitComment()">
@@ -26,5 +54,4 @@
             </div>
         </div>
     </div>   
-    </div>
-</body>
+    </div> -->

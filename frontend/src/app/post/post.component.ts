@@ -56,7 +56,9 @@ export class PostComponent implements OnInit {
         console.log('Post created successfully!');
         console.log(response);
         this.alert = true
-        this.postForm.reset({});
+        setTimeout(() => {
+        this.router.navigate(['/account']); 
+        }, 5000);
         })
     }
   
