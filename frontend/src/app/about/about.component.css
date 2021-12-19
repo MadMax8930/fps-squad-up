@@ -1,15 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
-
-.about {
-  background: #202122;
-}
-
 .container {
   width: 100%;
   padding: 0px;
-  background: #000000;
+  background: #202122;
   background: -webkit-linear-gradient(to right, #434343, #000000);
   background: linear-gradient(to right, #434343, #000000);
   max-width: 100%;
@@ -21,13 +16,19 @@
 }
 
 .about-text-click {
-  font-family: "Rubik Mono One", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: x-small;
   color: #b9bbc5;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 500;
+  color: snow;
 }
 
 fa-icon {
@@ -43,7 +44,30 @@ div span {
   cursor: pointer;
 }
 
-@media screen and (max-width: 560px) {
+.social {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.social ul li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* @media screen and (max-width: 560px) {
   .about-text-click {
     font-family: "Press Start 2P", cursive;
     font-size: 9px;
@@ -125,4 +149,4 @@ div span {
     position: relative;
     top: 5px;
   }
-}
+} */
