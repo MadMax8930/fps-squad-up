@@ -1,20 +1,31 @@
-section {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap');
+
+* {
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-.container{
-  border: 1px solid;
-  box-shadow: 7px 7px 2px 1px rgba(0, 0, 255, .15);
+section {
+  font-family: "Poppins", sans-serif;
+  text-transform: lowercase;
+  background: hsl(210, 36%, 96%);
+  color: hsl(209, 61%, 16%);
+  line-height: 1;
+  font-size: 1rem;
 }
 
 .home {
-  width: 100%;
-  margin: 0 auto;
-  padding: 2.5rem; 
+  width: 46%;
   overflow: auto;
   height: 580px;
+}
+
+section {
+  overflow-x: hidden; 
+  color: lightblack;
+  background-color: #202122;
+  border-top: 3px inset snow;
   background-image: url("/assets/home.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -25,25 +36,12 @@ section {
   border-collapse: collapse;
 }
 
-section {
-  overflow-x: hidden; 
-  color: lightblack;
-  background-color: #202122;
-}
-
-.column {
+ .column {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-around;
-  width: 100%;
-  height: 80%;
-}
-
-.card {
-   flex: 0 1 30%;
-   margin: 20px;
-   opacity: 0.85;
+  align-content: center;
+  margin: 30px;
 }
 
 .post-id  {
@@ -54,7 +52,7 @@ section {
 
 .post-id a  {
   text-decoration: none;
-  font-family: 'Press Start 2P';
+  font-family: 'Poppins';
   color: grey;
   font-size: x-small;
 }
@@ -62,8 +60,8 @@ section {
 
 .post-id a:first-child {
   text-decoration: none;
-  color: red;
-  font-family: 'Press Start 2P';
+  color: rgb(93, 148, 202);
+  font-family: 'Poppins';
   font-size: x-small;
 }
 
@@ -74,38 +72,81 @@ section {
   font-size: x-small;
 }
 
-@media screen and (max-width: 386px) {
-
- .card {
-    flex: 0 1 100%;
-    margin: 15px;
- }
-
- .home {
-  padding: 0.5rem; 
- }
- 
+.btn {
+  text-transform: uppercase;
+  background: transparent;
+  color: #222;
+  letter-spacing: 0.25rem;
+  display: inline-block;
+  transition: all 0.3s linear;
+  font-size: 0.875rem;
+  border: 2px solid #222;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-@media screen and (min-width: 386px) and (max-width: 580px) {
+.btn:hover {
+  background: #fff;
+  color: hsla(182, 63%, 54%);
+}
 
-  .card {
-     flex: 0 1 80%;
-     margin: 10px;
-  }
+.btn-white {
+  color: #fff;
+  border-color: #fff;
+  border-radius: 0;
+  padding: 0.5rem 1rem;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.container{
+  border-radius: 0%;
+  height: 130px;
+}
+
+.card {
+  margin-bottom: 3px;
+  padding-top: 5px;
+}
+
+
+@media screen and (max-width: 640px) {
  
   .home {
-   padding: 0.5rem; 
+   width: 100%;
   }
   
 }
 
-@media screen and (min-width: 580px) and (max-width: 786px) {
-
-  .card {
-     flex: 0 1 40%;
-     margin: 15px;
+@media screen and (min-width: 640px) and (max-width: 786px) {
+ 
+  .home {
+   width: 75%;
   }
+  
+}
+
+@media screen and (min-width: 786px) and (max-width: 900px) {
+ 
+  .home {
+   width: 62%;
+  }
+  
+}
+
+@media screen and (min-width: 900px) and (max-width: 1120px) {
+ 
+  .home {
+   width: 50%;
+  }
+  
+}
+
+/*
+
+@media screen and (min-width: 580px) and (max-width: 786px) {
  
   .home {
    padding: 1.5rem; 
@@ -115,11 +156,6 @@ section {
 
 @media screen and (min-width: 786px) and (max-width: 1180px) {
 
-  .card {
-     flex: 0 1 30%;
-     margin: 10px;
-  }
- 
   .home {
    padding: 0.5rem; 
   }
@@ -128,22 +164,9 @@ section {
 
 @media screen and (min-width: 1180px) {
 
-  .card {
-     flex: 0 1 23%;
-     margin: 10px;
-  }
- 
   .home {
    padding: 1rem; 
   }
   
 }
-
-
-/* @media screen and (max-width: 886px) and (min-width: 280px) {
-
-  .home {
-    height: 600px;
-  }
-
-} */
+ */

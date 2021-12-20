@@ -30,8 +30,8 @@ body {
 }
 
 .btn:hover {
-  color: #fff;
-  background: #222;
+  background: #fff;
+  color: hsla(182, 63%, 54%);
 }
 
 .btn-white {
@@ -39,11 +39,6 @@ body {
   border-color: #fff;
   border-radius: 0;
   padding: 0.5rem 1rem;
-}
-
-.btn:hover {
-  background: #fff;
-  color: hsla(182, 63%, 54%);
 }
 
 header {
