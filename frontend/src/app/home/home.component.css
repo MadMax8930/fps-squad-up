@@ -58,9 +58,17 @@ section {
   font-size: x-small;
 }
 
+.post-id a:last-child {
+  text-decoration: none;
+  color: rgb(202, 97, 93);
+  font-family: 'Poppins';
+  font-size: x-small;
+}
+
 .post-title {
   font-family: "Caveat Brush", cursive;
   font-size: 1rem;
+  margin-top: 7px;
 }
 
 .post-content {
@@ -70,38 +78,13 @@ section {
   color: #666;
 }
 
-.btn {
-  text-transform: uppercase;
-  background: transparent;
-  color: #222;
-  letter-spacing: 0.25rem;
-  display: inline-block;
-  transition: all 0.3s linear;
-  font-size: 0.875rem;
-  border: 2px solid #222;
-  cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-.btn:hover {
-  background: #fff;
-  color: hsla(182, 63%, 54%);
-}
-
-.btn-white {
-  color: #fff;
-  border-color: #fff;
-  border-radius: 0;
-  padding: 0.5rem 1rem;
-}
-
 ::-webkit-scrollbar {
     display: none;
 }
 
 .container{
   border-radius: 0%;
-  height: 130px;
+  height: 80px;
   cursor: pointer;
 }
 
@@ -142,4 +125,45 @@ section {
    width: 50%;
   }
   
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.btn {
+  text-transform: uppercase;
+  background: transparent;
+  color: #222;
+  letter-spacing: 0.25rem;
+  display: inline-block;
+  transition: all 0.3s linear;
+  font-size: 0.875rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: hsla(182, 63%, 54%);
+  transform: scale(0.82);
+}
+
+.btn-white {
+  color: #fff;
+  border-color: #fff;
+  border-radius: 0;
+  padding: 0.5rem 1rem;
+}
+
+.btn-account {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@media screen and (max-width: 440px) {
+  .btn-account {
+    transform: scale(0.60);
+  }
+
 }

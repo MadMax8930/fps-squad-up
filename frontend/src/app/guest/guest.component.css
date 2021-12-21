@@ -180,13 +180,6 @@ app-navbar-visitor {
     z-index: 1001;
 }
 
-app-visitor {
-    position: absolute;
-    width: 100%;
-    z-index: 1001;
-}
-
-
 .card {
   position: fixed;
   width: 200px;
