@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 .container {
@@ -65,88 +65,4 @@ div span {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-/* @media screen and (max-width: 560px) {
-  .about-text-click {
-    font-family: "Press Start 2P", cursive;
-    font-size: 9px;
-    font-weight: 500;
-    color: black;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    text-align: center;
-  }
-}
-
-@media screen and (max-width: 380px) {
-  .about-text-click {
-    font-family: "Press Start 2P", cursive;
-    font-size: 6px;
-    font-weight: 400;
-    color: black;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    text-align: center;
-  }
-  .btn {
-    font-size: xx-small;
-  }
-}
-
-@media screen and (min-width: 1120px) {
-  .container {
-    min-height: 50px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .container {
-    min-height: 15px;
-  }
-
-  .btn {
-    font-size: 9px;
-    font-weight: 500;
-  }
-
-  .fa-lg {
-    font-size: 11px;
-  }
-}
-
-@media screen and (min-width: 880px) and (max-width: 1180px) {
-  .container {
-    min-height: 20px;
-  }
-
-  .about-text {
-    position: relative;
-    top: 3px;
-  }
-}
-
-@media screen and (min-width: 1180px) and (max-width: 1300px) {
-  .container {
-    min-height: 30px;
-  }
-
-  .about-text {
-    position: relative;
-    top: 5px;
-  }
-}
-
-@media screen and (min-width: 1300px) {
-  .container {
-    min-height: 30px;
-    padding-bottom: 5px;
-  }
-
-  .about-text {
-    position: relative;
-    top: 5px;
-  }
 } */

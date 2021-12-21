@@ -8,12 +8,6 @@ import { faGamepad } from '@fortawesome/free-solid-svg-icons';
 })
 export class FooterComponent implements OnInit {
 
-  showDiv = {
-    displayFooter : false
-  }
-  
-  faGamepad = faGamepad;
-
   constructor() { }
 
   ngOnInit(): void {

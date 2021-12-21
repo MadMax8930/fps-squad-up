@@ -25,12 +25,6 @@ export class LoginComponent implements OnInit {
     }); 
   }
 
-//   (?=\D*\d) - there must be 1 digit
-//   (?=[^a-z]*[a-z]) - there must be 1 lowercase ASCII letter
-//   (?=[^A-Z]*[A-Z]) - there must be 1 uppercase ASCII letter
-//   .{8,30} - any 8 to 30 chars other than line break chars
-//   $ - end of string (implicit in string regex pattern).
-
   submitForm() {
     const formValues = this.loginForm.value;
     this.authService.login(formValues)
