@@ -6,8 +6,8 @@
 
          <div class="btn-account">
               <a class="btn"><button type="button" class="btn btn-1" (click)="logout()">LOGOUT</button></a>
-              <a class="btn btn-add" [routerLink]="['/post']"><button type="button" class="btn btn-2">CREATE</button></a> 
-              <a class="btn" routerLink="/home"><button type="button" class="btn btn-2">SEARCH</button></a>          
+              <a class="btn btn-add" [routerLink]="['/account/post/add']"><button type="button" class="btn btn-2">CREATE</button></a> 
+              <a class="btn" routerLink="/account/posts"><button type="button" class="btn btn-2">SEARCH</button></a>          
          </div>
 
             <div class="carousel-inner">
@@ -59,7 +59,7 @@
                 <tr>
                     <th style="width: 50px;">ID</th>
                     <th style="width: 50px;">GAME</th>
-                    <th style="width: 100px;">POST TITLE</th>
+                    <th style="width: 100px;">TAG</th>
                     <th><i class="uil uil-postcard"></i> SQUAD POST</th>
                     <th style="width: 100px;">EDIT</th>
                     <th style="width: 100px;">DELETE</th>
@@ -69,11 +69,11 @@
             <tbody>
     
                 <tr *ngFor="let post of posts">
-                        <td data-label="ID"><a [routerLink]="['/feedback', post.id]">{{post.id}}</a></td>
+                        <td data-label="ID"><a [routerLink]="['/account/post/feedback', post.id]">{{post.id}}</a></td>
                         <td data-label="GAME">{{post.GameId}}</td>
-                        <td data-label="POST TITLE">{{post.content}}</td>
+                        <td data-label="TAG">{{post.content}}</td>
                         <td data-label="SQUAD POST">{{post.title}}</td>
-                        <td data-label="EDIT"><button class="btn btn-edit" [routerLink]="['/update', post.id]"><i class="uil uil-edit-alt"></i></button></td>
+                        <td data-label="EDIT"><button class="btn btn-edit" [routerLink]="['/account/post/update', post.id]"><i class="uil uil-edit-alt"></i></button></td>
                         <td data-label="DELETE"><button class="btn btn-delete" (click)="deleteOnClick(post.id, post.UserId)"><i class="uil uil-trash-alt"></i></button></td>
                 </tr>
             </tbody>

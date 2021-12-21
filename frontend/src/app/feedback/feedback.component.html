@@ -6,7 +6,7 @@
         <form [formGroup]="commentForm" (ngSubmit)="submitComment()">
             <textarea placeholder='Add Your Comment' formControlName="content" type="text" id="content" class="form-control addtxt"></textarea>
             <div class="btns">
-                <button class="btn btn-1 redirection-text"><a href="/home">Return</a></button>
+                <button class="btn btn-1 redirection-text"><a href="/account/posts">Return</a></button>
                 <button class="btn btn-2" type="submit" (click)="refreshPage()">Comment</button>
             </div>
         </form>

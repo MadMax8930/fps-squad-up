@@ -31,7 +31,7 @@
 
 .subtitle {
   color: #eee;
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   font-weight: 600;
   margin-top: 10px;
@@ -39,7 +39,7 @@
 
 p {
   color: #eee;
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 12px;
   font-weight: 400;
   margin-top: 10px;
