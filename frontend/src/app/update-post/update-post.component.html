@@ -1,65 +1,55 @@
+<!-- Bootstrap 4 -->
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-
 
 <body>
-<div class="wrapper" id="img">
-<div class="container update-post">
-            <div class="row">
-                <div class="col-md-12 col-md-offset-4">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="text-center">
-                                <img src="/assets/logoBrand.png" alt="logo" border="0" routerLink='/account'>
-                                <h2 class="text-center squad-post">Update Squad Post</h2>
-                                <div class="update-text-1">
-                                <p><i>Let's edit your post</i></p>
-                            </div>
+  <!-- Wrapper Design -->
+  <div class="wrapper" id="img">
 
-                            <form (ngSubmit)="submitUpdate()" [formGroup]="updateForm" class="form" method="update">
+  <!-- Update Section -->
+  <div class="container update-post">
+     <div class="text-center">
+        <!-- Logo -->
+        <img src="/assets/logoBrand.png" alt="website's logo" routerLink='/account'>
+        <h2 class="text-center squad-post">Update Squad Post</h2>
+        <p class="update-text-1"><i>Let's edit your post</i></p>
+        <!-- Alert -->
+        <div *ngIf="alert" class="alert alert-success success-dismissible fade show" role="alert">
+            <strong>Update successful!</strong> Your post has been updated
+            <button (click)="closeAlert()" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <!-- Update Form -->
+        <form (ngSubmit)="submitUpdate()" [formGroup]="updateForm" class="form" method="update">
+           <!-- Title -->    
+           <div class="form-group d-flex justify-content-center">
+              <div class="input-group">
+                <input id="post" formControlName="content" placeholder="Edit Title" class="form-control" type="text" name="content" aria-label="post" aria-describedby="post-addon"/>
+                <span class="input-group-text" id="post-addon"></span>
+              </div>
+           </div>
+           <!-- Content -->     
+           <div class="form-group d-flex justify-content-center">
+              <div class="input-group">
+                <textarea id="title" formControlName="title"  placeholder="Edit Post" class="form-control" type="text" name="title" aria-label="title" aria-describedby="title-addon"></textarea>
+                <span class="input-group-text" id="title-addon"></span>               
+              </div>
+           </div>
+           <!-- Account Redirect -->                
+           <div class="update-text-2">
+             <p><small>All your posts are visible from your <a href="/account">account</a></small></p>
+           </div>
+           <!-- Submit Post -->
+           <button type="submit" [disabled]="updateForm.invalid" class="btn btn-danger">Update Post</button>
+        </form>
+     </div>
+  </div>
 
-                                <div *ngIf="alert" class="alert alert-success success-dismissible fade show" role="alert">
-                                    <strong>Update successful!</strong> Your post has been updated
-                                    <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-                                    </button>
-                                  </div>
-
-                                    <div class="form-group d-flex justify-content-center">
-                                        <div class="input-group">
-                                            <input id="title" formControlName="title" placeholder="Edit Title" class="form-control" type="text" name="title" aria-label="title" aria-describedby="title-addon"/>
-                                            <span class="input-group-text" id="title-addon"></span>
-                                        </div>
-                                    </div>
-                                
-                                    <div class="form-group d-flex justify-content-center">
-                                        <div class="input-group">
-                                            <textarea id="content" formControlName="content"  placeholder="Edit Post" class="form-control" type="text" name="content" aria-label="post" aria-describedby="post-addon"></textarea>
-                                            <span class="input-group-text" id="post-addon"></span>               
-                                        </div>
-                                    </div>
-
-                                    <!-- <div class="form-group d-flex justify-content-center">
-                                        <label for="postImage"></label>
-                                        <input type="file" class="form-control-file" id="postImage">
-                                    </div> -->
-
-                                 <div class="update-text-2">
-                                    <p><small>All your posts are visible from your <a href="/account">account</a></small></p>
-                                </div>
-            
-                                        <button type="submit" [disabled]="updateForm.invalid" class="btn btn-danger">Update Post</button>
-                                </form>
-                            </div>
-                    
-                        </div>
-                    </div>
-                </div>
-            </div>
-</div>
-</div>
+  </div>
 </body>
 
+<!-- V2 Adding an Image 
+   <div class="form-group d-flex justify-content-center">
+      <label for="postImage"></label>
+      <input type="file" class="form-control-file" id="postImage">
+   </div> -->

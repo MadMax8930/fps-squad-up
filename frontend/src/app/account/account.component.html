@@ -1,86 +1,84 @@
 <app-navbar-visitor></app-navbar-visitor>
 <body>
-  <div id="carouselSlides" class="carousel slide" data-bs-ride="carousel">
-
+    <!-- Carousel Section -->
+    <div id="carouselSlides" class="carousel slide" data-bs-ride="carousel">
+        <!-- Welcome Message -->
         <h1 class="heading">Welcome {{userName}}</h1>
-
-         <div class="btn-account">
-              <a class="btn"><button type="button" class="btn btn-1" (click)="logout()">LOGOUT</button></a>
-              <a class="btn btn-add" [routerLink]="['/account/post/add']"><button type="button" class="btn btn-2">CREATE</button></a> 
-              <a class="btn" routerLink="/account/posts"><button type="button" class="btn btn-2">SEARCH</button></a>          
-         </div>
-
-            <div class="carousel-inner">
-                
-                <div class="carousel-item active">
-                    <img src="assets/carap.png" class="d-block w-100 img-fluid"
-                        alt="image">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/car5.png" class="d-block w-100 img-fluid"
-                        alt="image">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/game9.jpg" class="d-block w-100 img-fluid"
-                        alt="image">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/csgoo.png" class="d-block w-100 img-fluid"
-                        alt="image">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/tes.png" class="d-block w-100 img-fluid"
-                        alt="image">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/dm.png" class="d-block w-100 img-fluid"
-                        alt="image">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/jak.jpg" class="d-block w-100 img-fluid"
-                        alt="image">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/haloe.jpg" class="d-block w-100 img-fluid"
-                        alt="image">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/duke.jpg" class="d-block w-100 img-fluid"
-                        alt="image">
-                </div>
+        <!-- Middle Buttons -->
+        <div class="btn-account">
+            <a class="btn btn-1" (click)="logout()">LOGOUT</a>
+            <a class="btn btn-2" routerLink="/account/post/add">CREATE</a> 
+            <a class="btn btn-2" routerLink="/account/posts">SEARCH</a>          
+        </div>
+        <!-- Carousel Slides -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="assets/carap.png" class="d-block w-100 img-fluid" 
+                alt="Wraith character on a pink background from Apex Legends video game">
             </div>
-   </div>
-
-  <div class="scroll-container">   
-    <div class="table-container">
-
-        <table class="table">
-            <thead>
-                <tr>
-                    <th style="width: 50px;">ID</th>
-                    <th style="width: 50px;">GAME</th>
-                    <th style="width: 100px;">TAG</th>
-                    <th><i class="uil uil-postcard"></i> SQUAD POST</th>
-                    <th style="width: 100px;">EDIT</th>
-                    <th style="width: 100px;">DELETE</th>
-                </tr>
-            </thead>
-        
-            <tbody>
-    
-                <tr *ngFor="let post of posts">
-                        <td data-label="ID"><a [routerLink]="['/account/post/feedback', post.id]">{{post.id}}</a></td>
-                        <td data-label="GAME">{{post.GameId}}</td>
-                        <td data-label="TAG">{{post.content}}</td>
-                        <td data-label="SQUAD POST">{{post.title}}</td>
-                        <td data-label="EDIT"><button class="btn btn-edit" [routerLink]="['/account/post/update', post.id]"><i class="uil uil-edit-alt"></i></button></td>
-                        <td data-label="DELETE"><button class="btn btn-delete" (click)="deleteOnClick(post.id, post.UserId)"><i class="uil uil-trash-alt"></i></button></td>
-                </tr>
-            </tbody>
-        </table>
-
+            <div class="carousel-item">
+                <img src="assets/car5.png" class="d-block w-100 img-fluid" 
+                alt="Two soldiers fighting matrix style from Battlefield 4 video game">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/game9.jpg" class="d-block w-100 img-fluid" 
+                alt="BJ Blazkowicz character facing a gigantic robot form Wolfenstein video game">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/csgoo.png" class="d-block w-100 img-fluid" 
+                alt="M4 Howl riffle from Counter Strike Global Offensive video game">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/tes.png" class="d-block w-100 img-fluid" 
+                alt="Naga operator with a revolver from Call of Duty Cold War video game">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/dm.png" class="d-block w-100 img-fluid" 
+                alt="Doom Slayer with sawed off shotgun from Doom 2019 video game">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/jak.jpg" class="d-block w-100 img-fluid" 
+                alt="Sledge operator with a hammer from Rainbow Six Siege video game">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/haloe.jpg" class="d-block w-100 img-fluid" 
+                alt="Master Chief fighting aliens from Halo 4 video game">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/duke.jpg" class="d-block w-100 img-fluid" 
+                alt="Duke Nukem smoking a cigar from Duke Nukem forever video game">
+            </div>
+        </div>
     </div>
-  </div>
-  <app-about></app-about>
-  <app-footer></app-footer>
+    <!-- Table Section -->
+    <div class="scroll-container">   
+      <div class="table-container">
+        <table class="table">
+          <thead>
+            <tr>
+                <th style="width: 50px;">ID</th>
+                <th style="width: 50px;">GAME</th>
+                <th style="width: 100px;">TAG</th>
+                <th><i class="uil uil-postcard"></i> SQUAD POST</th>
+                <th style="width: 100px;">EDIT</th>
+                <th style="width: 100px;">DELETE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let post of posts">
+                <td data-label="ID"><a [routerLink]="['/account/post/feedback', post.id]">{{post.id}}</a></td>
+                <td data-label="GAME">{{post.GameId}}</td>
+                <td data-label="TAG">{{post.content}}</td>
+                <td data-label="SQUAD POST">{{post.title}}</td>
+                <td data-label="EDIT"><button class="btn btn-edit" 
+                    [routerLink]="['/account/post/update', post.id]"><i class="uil uil-edit-alt"></i></button></td>
+                <td data-label="DELETE"><button class="btn btn-delete" 
+                    (click)="deleteOnClick(post.id, post.UserId)"><i class="uil uil-trash-alt"></i></button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Footer -->
+    <app-footer></app-footer>
 </body>

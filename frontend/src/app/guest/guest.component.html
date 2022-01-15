@@ -1,40 +1,41 @@
 <app-navbar-visitor></app-navbar-visitor>
 <body>
-    <section>
+  <section>
     <header id="home">
-            <!-- Video Preloader -->  
-            <div class="preloader">
-                <img src="assets/preloader.gif" alt="website's preloader" />
+        <!-- Preloader -->  
+        <div class="preloader">
+            <img src="assets/preloader.gif" alt="website's preloader: running goku" />
+        </div>
+        <!-- Video -->
+        <video class="video-container" autoplay muted loop>
+            <source src="assets/banner-vid.mp4" type="video/mp4" title="variety of different fps games" />
+        </video>
+        <!-- Middle Buttons -->
+        <div class="btn-account">
+            <a class="btn btn-1" routerLink="/register">SIGNUP</a>
+            <a class="btn btn-2" routerLink="/login">LOGIN</a>
+        </div>
+        <!-- Left Side Content -->   
+        <div class="intro-container">
+            <h1>For Gamers by Gamers</h1>
+            <p>Fps-Squad-Up allows you to find gamer buddies to play with. <br>
+               login, synergize and win in your favorite first-person-shooters.</p>
+            <button class="btn btn-white" (click)="randomPost()">Random Post</button>
+        </div>
+        <!-- Random Post Generator -->   
+        <div class="card" *ngIf="showCard">
+            <div class="card-body" (click)="toggleShow()">
+                <h3 class="card-title mb-2">{{post.title}}</h3>
+                <p class="card-text mb-2">{{post.content}}</p>
             </div>
-
-            <video class="video-container" autoplay muted loop>
-                <source src="assets/banner-vid.mp4" type="video/mp4" />
-            </video>
-
-            <div class="btn-account">
-               <a class="btn" routerLink="/register"><button type="button" class="btn btn-1">SIGNUP</button></a>
-               <a class="btn" routerLink="/login"><button type="button" class="btn btn-2">LOGIN</button></a>
-            </div>
-    
-            <div class="intro-container">
-                <h1>For Gamers by Gamers</h1>
-                <p>Fps-Squad-Up allows you to find gamer buddies to play with. <br>login, synergize and win in your favorite first-person-shooters.</p>
-                <a [routerLink]="" (click)="randomPost()" class="btn btn-white">Random Post</a>
-            </div>
-            <!-- Random Post Generator -->   
-            <div class="card" *ngIf="showCard">
-                <div class="card-body" (click)="toggleShow()">
-                    <h3 class="card-title mb-2">{{post.title}}</h3>
-                    <p class="card-text mb-2">{{post.content}}</p>
-                </div>
-            </div>
-            <!-- Toggle Video -->
-            <button class="switch-btn">
-                <span>Play</span>
-                <span>Pause</span>
-                <span class="switch"></span>
-            </button>
+        </div>
+        <!-- Toggle Video -->
+        <button class="switch-btn">
+            <span>Play</span>
+            <span>Pause</span>
+            <span class="switch"></span>
+        </button>
     </header>
-    </section>
+  </section>
 </body>
 

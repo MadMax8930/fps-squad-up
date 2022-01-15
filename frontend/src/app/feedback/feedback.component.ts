@@ -63,9 +63,9 @@ export class FeedbackComponent implements OnInit {
     this.showAllComments();
 }
 
-refreshPage() {
-   window.location.reload();
-}
+  refreshPage() {
+    window.location.reload();
+  }
 
 }
 

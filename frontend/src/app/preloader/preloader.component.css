@@ -1,4 +1,4 @@
-.preloader {
+/* .preloader {
     position: fixed;
     top: 0;
     left: 0;
@@ -9,10 +9,10 @@
     justify-content: center;
     align-items: center;
     visibility: visible;
-    z-index: 999;
+    z-index: 100;
 }
 
 .hide-preloader {
-    z-index: -999;
     visibility: hidden;
-}
+    z-index: -100;
+} */

@@ -1,73 +1,63 @@
+<!-- Bootstrap 4 -->
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-
 
 <body>
-<div class="wrapper" id="img">
-<div class="container add-post">
-            <div class="row">
-                <div class="col-md-12 col-md-offset-4">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="text-center">
-                                <img src="/assets/logoBrand.png" alt="logo" border="0" routerLink='/account'>
-                                <h2 class="text-center squad-post">Add New Squad Post</h2>
-                                <div class="add-text-1">
-                                <p><i>What kind of player are you looking for?</i></p>
-                            </div>
+  <!-- Wrapper Design -->
+  <div class="wrapper" id="img">
 
-                                
+  <!-- Add Section -->
+  <div class="container add-post">
+     <div class="text-center">
+        <!-- Logo -->
+        <img src="/assets/logoBrand.png" alt="website's logo" routerLink='/account'>
+        <h2 class="text-center squad-post">Add New Squad Post</h2>
+        <p class="add-text-1"><i>What kind of player are you looking for?</i></p>
+        <!-- Alert -->
+        <div *ngIf="alert" class="alert alert-success success-dismissible fade show" role="alert">
+            <strong>Success!</strong> Post has been created!
+            <button (click)="closeAlert()" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <!-- Add Form -->
+        <form (ngSubmit)="submitPost()" [formGroup]="postForm" class="form" method="post">
+           <!-- Game -->  
+           <select id="game" class="my-3" formControlName="gameId">
+              <option value=""> Select your game</option>
+              <option value="{{game.id}}" *ngFor="let game of games">{{game.gameName}}</option>
+           </select>
+           <!-- Title -->     
+           <div class="form-group d-flex justify-content-center">
+              <div class="input-group">
+                <input id="post" formControlName="content" placeholder="Add Title" class="form-control" type="text" name="content" aria-label="post" aria-describedby="post-addon">
+                <span class="input-group-text" id="post-addon"></span>
+              </div>
+           </div>
+           <!-- Content -->     
+           <div class="form-group d-flex justify-content-center">
+              <div class="input-group">
+                <textarea id="title" formControlName="title"  placeholder="Add Post" class="form-control" type="text" name="title" aria-label="by" aria-describedby="by-addon"></textarea>
+                <span class="input-group-text" id="by-addon"></span>               
+              </div>
+           </div>
+           <!-- Account Redirect -->
+           <div class="add-text-2">
+             <p><small>All your posts are visible from your <a href="/account">account</a></small></p>
+           </div>
+           <!-- Submit Post -->
+           <button type="submit" [disabled]="postForm.invalid" class="btn btn-danger">Create Post</button>
+        </form>
+     </div>
+  </div>
 
-                                <div *ngIf="alert" class="alert alert-success success-dismissible fade show" role="alert">
-                                  <strong>Success!</strong> Post has been created!
-                                  <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                                </div>
-
-                                <form (ngSubmit)="submitPost()" [formGroup]="postForm" class="form" method="post">
-
-                                <select id="game" class="my-3" formControlName="gameId">
-                                    <option value=""> Select your game</option>
-                                    <option value="{{game.id}}" *ngFor="let game of games">{{game.gameName}}</option>
-                                </select>
-                                 
-                                    <div class="form-group d-flex justify-content-center">
-                                        <div class="input-group">
-                                            <input id="post" formControlName="content" placeholder="Add Title" class="form-control" type="text" name="content" aria-label="post" aria-describedby="post-addon">
-                                            <span class="input-group-text" id="post-addon"></span>
-                                        </div>
-                                    </div>
-                                
-                                    <div class="form-group d-flex justify-content-center">
-                                        <div class="input-group">
-                                            <textarea id="title" formControlName="title"  placeholder="Add Post" class="form-control" type="text" name="title" aria-label="by" aria-describedby="by-addon"></textarea>
-                                            <span class="input-group-text" id="by-addon"></span>               
-                                        </div>
-                                    </div>
-
-                                    <!-- <div class="form-group d-flex justify-content-center">
-                                        <label for="postImage"></label>
-                                        <input type="file" class="form-control-file" id="postImage">
-                                    </div> -->
-
-                                 <div class="add-text-2">
-                                    <p><small>All your posts are visible from your <a href="/account">account</a></small></p>
-                                </div>
-            
-                                        <button type="submit" [disabled]="postForm.invalid" class="btn btn-danger">Create Post</button>
-                                </form>
-                            </div>
-                    
-                        </div>
-                    </div>
-                </div>
-            </div>
-</div>
-</div>
+  </div>
 </body>
+
+ <!-- V2 Adding an Image 
+   <div class="form-group d-flex justify-content-center">
+      <label for="postImage"></label>
+      <input type="file" class="form-control-file" id="postImage">
+   </div> -->
+
 
 

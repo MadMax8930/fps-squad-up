@@ -40,7 +40,7 @@ export class UpdatePostComponent implements OnInit {
       this.alert = true;
       setTimeout(() => {
         this.router.navigate(['/account']); 
-      }, 5000);
+      }, 3500);
       })
   }
 

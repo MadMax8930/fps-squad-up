@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { PostService } from '../services/post.service';
-import { User } from '../models/user';
 
 @Component({
   selector: 'app-account',
@@ -41,7 +40,8 @@ export class AccountComponent implements OnInit {
 
   logout() {
     this.authService.logout();
-    window.location.reload();
+    this.router.navigate(['/login']);
+    // window.location.reload();
   }
 
 }

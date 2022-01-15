@@ -9,10 +9,10 @@ export class CategoryService {
   
   baseUrl : string = environment.api_url;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   public getGames(){
-    return this.httpClient.get<any>(this.baseUrl + "/games");
+    return this.http.get<any>(this.baseUrl + "/games");
   }
 
 }

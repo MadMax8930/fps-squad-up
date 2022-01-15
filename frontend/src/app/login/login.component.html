@@ -1,50 +1,54 @@
 <body>
-    <div class="wrapper" id="img">
-      <div class="login-form form-signin text-center" id="login-position">
-        <span>
-          <div class="logo-website">
-            <a href="#" class="logo">
-              <img src="assets/logo-web-white.png" alt="Website Logo" width="80%">
-            </a>
-          </div>
-        </span>
-       <form (ngSubmit) ="submitForm()"  [formGroup]="loginForm"> 
-          <div class="form">
-             <div class="title">Welcome back</div>
-             <div class="subtitle">Access your account!</div>
-  
-          <div class="form-floating input-container ic1">
-            <input type="email" 
-                    class="form-control input" 
-                    for="email" 
-                    placeholder="Email" 
-                    name="email" 
-                    id="email" 
-                    formControlName="email">
-                    <div class="cut"></div>
-            <label for="email">Email</label>
-          </div>
-  
-          <div class="form-floating input-container ic1">
-            <input type="password" 
-                    class="form-control input" 
-                    for="password" 
-                    placeholder="Password" 
-                    name="password" 
-                    formControlName="password">
-                    <div class="cut cut-short"></div>
-            <label id="password">Password</label>
-          </div>
+  <!-- Wrapper Design -->
+  <div class="wrapper" id="img">
 
-          <div class="text-register">
-            <p>Not a member? <a href='/register'>Register</a></p>
-          </div>
-      
-          <button class="btn btn-lg btn-primary submit" 
-                  type="submit" 
-                  [disabled]="loginForm.invalid">LOGIN</button>
-        </div>
-        </form>
+  <!-- Login Section -->
+  <div class="login-form form-signin text-center" id="login-position">
+      <!-- Logo -->
+      <div class="logo-website">
+        <a href="#" class="logo">
+          <img src="assets/logo-web-white.png" alt="Website's logo" width="80%">
+        </a>
       </div>
-    </div>
+      <!-- Login Form -->
+      <form (ngSubmit) ="submitForm()" [formGroup]="loginForm"> 
+        <div class="form">
+            <div class="title">Welcome back</div>
+            <div class="subtitle">Access your account!</div>
+            <!-- Email -->
+            <div class="form-floating input-container ic1">
+              <input type="email" 
+                     class="form-control input" 
+                     for="email" 
+                     placeholder="Email" 
+                     name="email" 
+                     id="email" 
+                     formControlName="email">
+                <div class="cut"></div>
+              <label for="email">Email</label>
+            </div>
+            <!-- Password -->
+            <div class="form-floating input-container ic1">
+              <input type="password" 
+                     class="form-control input" 
+                     for="password" 
+                     placeholder="Password" 
+                     name="password" 
+                     formControlName="password">
+                <div class="cut cut-short"></div>
+              <label id="password">Password</label>
+            </div>
+            <!-- Register Redirect -->
+            <div class="text-register">
+              <p>Not a member? <a href='/register'>Register</a></p>
+            </div>
+            <!-- Submit Form -->
+            <button class="btn btn-lg btn-primary submit" 
+                    type="submit" 
+                    [disabled]="loginForm.invalid">LOGIN
+            </button>
+        </div>
+      </form>
+  </div>
+  </div>
 </body>

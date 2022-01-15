@@ -1,21 +1,25 @@
 <app-navbar-visitor></app-navbar-visitor>
 <section>
-<div class="home">
-     <div class="btn-account">
-              <a class="btn"><button type="button" class="btn btn-white" (click)="logout()">LOGOUT</button></a>
-              <a class="btn" [routerLink]="['/account']"><button type="button" class="btn btn-white">MY ACCOUNT</button></a>
+<!-- Home Section -->
+    <div class="home">
+        <!-- Top Buttons -->
+        <div class="btn-account">
+            <a class="btn btn-white" (click)="logout()">LOGOUT</a>
+            <a class="btn btn-white" routerLink="/account"><i class="uil uil-arrow-circle-right"></i>MY ACCOUNT</a>
+        </div>
+        <!-- Card Posts -->
+        <div class ="column">
+            <div class="container card" *ngFor="let post of posts">
+                <div class="post-card-content" [routerLink]="['/account/post/feedback', post.id]">
+                    <span class="post-id"><a><p>{{post.id}}</p></a><a><p>{{post.UserId}}</p></a></span>
+                    <div class="post-title"><span>{{post.title}}</span></div>
+                    <div class="post-content"><span>{{post.content}}</span></div>
+                    <!-- <div class="post-name"></div> -->
+                    <!-- <div class="post-category">{{post.GameId}}</div> -->
+                </div>
+            </div>
+        </div>
     </div>
-<div class ="column">
-<div class="container card" *ngFor="let post of posts">
-    <div class="post-card-content" [routerLink]="['/account/post/feedback', post.id]">
-        <span class="post-id"><a><p>{{post.id}}</p></a><a><p>{{post.UserId}}</p></a></span>
-        <div class="post-title"><span>{{post.title}}</span></div>
-        <div class="post-content"><span>{{post.content}}</span></div>
-        <!-- <div class="post-name"></div> -->
-        <!-- <div class="post-category">{{post.GameId}}</div> -->
-    </div>
-</div>
-</div>
-</div>
 </section>
+<!-- Footer -->
 <app-footer></app-footer>

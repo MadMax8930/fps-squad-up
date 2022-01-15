@@ -1,59 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
 .footer-container {
-  width: 100%;
-  padding: 0px;
-  background: #000000;
-  background: -webkit-linear-gradient(to right, #434343, #000000);
-  background: linear-gradient(to right, #434343, #000000);
-  max-width: 100%;
   border-top: 3px inset snow;
   padding-bottom: 10rem;
-}
-
-.footer-content {
   font-family: 'Poppins', sans-serif;
   font-size: x-small;
-  color: #b9bbc5;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .footer-social {
-    background: #000000;
-    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 a {
+  cursor: pointer;
   text-decoration: none;
-  font-weight: 500;
   color: snow;
 }
 
-fa-icon {
-  font-size: large;
-}
-
-.fa-lg {
-  color: #f5f6fc;
-}
-
-div span {
-  color: #f5f6fc;
+span {
   cursor: pointer;
+  color: #f5f6fc;
 }
 
 .footer-social ul {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .footer-social ul li {
@@ -63,16 +37,15 @@ div span {
 }
 
 .footer-copyright {
-    margin-top: -1rem;
-    font-size: 10px;
-    text-align: center;
+  margin-top: -1rem;
+  font-size: 10px;
+  text-align: center;
 }
 
 
 @media screen and (max-width: 540px) {
-    .footer-copyright {
-    margin-top: -1.5rem;
-    font-size: 8px;
-    text-align: center;
+  .footer-copyright {
+  margin-top: -1.25rem;
+  font-size: 8px;
 }
 }

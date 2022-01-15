@@ -137,15 +137,6 @@ form {
     border: 2px solid rgb(32, 29, 29);
   }
 
-  .btn-1 a {
-    text-decoration: none;
-    color: white;
-  }
-  
-  .btn-1, .btn-1 a:hover {
-    color: #24252a;
-  }
-
   .btn-1:hover {
     background-color: rgba(251, 255, 0, 0.884);
     color: #24252a;
@@ -156,7 +147,6 @@ form {
     color: #24252a;
   }
   
-
   @media screen and (max-width: 360px) {
       section {
         transform: scale(0.70);

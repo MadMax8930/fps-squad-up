@@ -46,5 +46,5 @@ export class PostService {
   findRandom(post: Post): Observable<any>{
     return this.http.get<any>(this.baseUrl + "/posts/random");
   } 
-
+/* it works */
 }

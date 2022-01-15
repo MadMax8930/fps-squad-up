@@ -16,7 +16,5 @@ export class PreloaderComponent implements OnInit {
     this.myScriptElement.type = "text/javascript";
     this.myScriptElement.src = "../assets/js/home.js"
     document.body.appendChild(this.myScriptElement);
-  
  }
-
 }
